@@ -69,7 +69,7 @@
         const b=nodes[j], d=Math.hypot(a.x-b.x,a.y-b.y);
         if(d<155) {ctx.strokeStyle=`rgba(36,100,109,${.23*(1-d/155)})`;ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
       }
-      ctx.fillStyle='rgba(36,100,109,.32)';ctx.beginPath();ctx.arc(a.x,a.y,2,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(53,126,137,.44)';ctx.beginPath();ctx.arc(a.x,a.y,2,0,Math.PI*2);ctx.fill();
       if(pointer && pointerNodes.has(a)) {const opacity=.13+.1*Math.max(0,1-pointerNodes.get(a)/250);ctx.strokeStyle=`rgba(106,177,215,${opacity})`;ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(pointer.x,pointer.y);ctx.stroke();}
     }
   }
@@ -85,7 +85,23 @@
   reduced.addEventListener('change',()=>{paused=reduced.matches;stars=[];glow.clearRect(0,0,width,height);label();schedule();});
   document.addEventListener('visibilitychange',schedule);
   addEventListener('resize',resize);
-  addEventListener('pointermove',event=>{if(!paused&&event.pointerType!=='touch'){pointer={x:event.clientX,y:event.clientY};if(stars.length<7&&(!stars.length||elapsed-stars[stars.length-1].born>.16))stars.push({x:pointer.x+(Math.random()-.5)*35,y:pointer.y-12,life:3.2,born:elapsed,size:4+Math.random()*6,kind:Math.floor(Math.random()*3),phase:Math.random()*6.28});}},{passive:true});
+  function addStar(x,y) {
+    if(stars.length>=7)stars.shift();
+    stars.push({x:x+(Math.random()-.5)*35,y:y-12,life:3.2,born:elapsed,size:4+Math.random()*6,kind:Math.floor(Math.random()*3),phase:Math.random()*6.28});
+  }
+  addEventListener('pointerdown',event=>{
+    if(paused)return;
+    pointer={x:event.clientX,y:event.clientY};
+    if(event.pointerType==='touch')for(let i=0;i<3;i++)addStar(pointer.x,pointer.y);
+    else addStar(pointer.x,pointer.y);
+  },{passive:true});
+  addEventListener('pointermove',event=>{
+    if(paused)return;
+    pointer={x:event.clientX,y:event.clientY};
+    if(!stars.length||elapsed-stars[stars.length-1].born>.16)addStar(pointer.x,pointer.y);
+  },{passive:true});
+  addEventListener('pointerup',event=>{if(event.pointerType==='touch')pointer=null;},{passive:true});
+  addEventListener('pointercancel',()=>{pointer=null;},{passive:true});
   document.addEventListener('pointerleave',()=>{pointer=null;});
   resize();label();schedule();
 })();
