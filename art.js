@@ -33,3 +33,6 @@ butterflies=butterflies.filter(b=>b.age<b.life);butterflies.forEach(b=>{b.age+=d
 function frame(now){const dt=Math.min((now-last)/1000||0,.04);last=now;if(!paused&&!document.hidden){t+=dt;if(t>nextBurst){launch();nextBurst=t+rand(.9,1.7)}if(t>nextButterfly){if(butterflies.length<5)butterfly();nextButterfly=t+rand(1.5,2.3)}draw(dt)}requestAnimationFrame(frame)}
 function label(){document.body.classList.toggle('paused',paused);const b=document.querySelector('#pause');if(!b)return;b.textContent=paused?'Play ✧':'Pause ✧';b.setAttribute('aria-label',paused?'Play animation':'Pause animation')}
 const pauseButton=document.querySelector('#pause');if(pauseButton)pauseButton.onclick=()=>{paused=!paused;label()};addEventListener('pointerdown',e=>{if(!paused&&!e.target.closest('button,a')&&e.clientY<h*.6)launch(e.clientX,e.clientY)});addEventListener('resize',resize);reduce.addEventListener('change',()=>{paused=reduce.matches;label();draw(0)});resize();label();requestAnimationFrame(frame);
+
+const entrance=document.querySelector('#enter-world');
+if(entrance){entrance.addEventListener('click',()=>{location.href='home.html?enter=1'});entrance.addEventListener('contextmenu',event=>event.preventDefault());}
