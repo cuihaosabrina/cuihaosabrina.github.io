@@ -80,3 +80,10 @@ header{justify-content:flex-end}
 .invitation-entry:has(.entry-label:focus-visible) .invitation-ornament,
 .invitation-entry:has(.entry-label:active) .invitation-ornament{filter:brightness(1.05) drop-shadow(0 0 2px #fff0c644)}
 @media(prefers-reduced-motion:reduce){.invitation-ornament{transition:none}}
+
+/* Touch feedback follows the lettering, without the browser's rectangular tap overlay. */
+.invitation-entry .entry-label{-webkit-tap-highlight-color:transparent}
+@media(hover:none) and (pointer:coarse){
+.invitation-entry .entry-label:focus:not(:focus-visible){outline:none}
+.invitation-entry .entry-label:active{background:transparent;text-shadow:0 0 5px #fff7df,0 1px 3px #69506c}
+}
