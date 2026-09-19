@@ -44,7 +44,7 @@
       glow.beginPath();glow.arc(0,0,kind===2?.5:.65,0,Math.PI*2);glow.fill();glow.restore();
     });
   }
-  function label() { toggle.textContent = paused ? 'Play network' : 'Pause network'; toggle.setAttribute('aria-label', paused ? 'Play background animation' : 'Pause background animation'); }
+  function label() { if(!toggle)return; toggle.textContent = paused ? 'Play network' : 'Pause network'; toggle.setAttribute('aria-label', paused ? 'Play background animation' : 'Pause background animation'); }
   function resize() {
     width = innerWidth; height = innerHeight;
     const ratio = Math.min(devicePixelRatio || 1, 2);
@@ -81,7 +81,7 @@
     frame=requestAnimationFrame(tick);
   }
   function schedule() {cancelAnimationFrame(frame);last=0;if(!paused&&!document.hidden)frame=requestAnimationFrame(tick);}
-  toggle.addEventListener('click',()=>{paused=!paused;stars=[];glow.clearRect(0,0,width,height);label();schedule();});
+  toggle?.addEventListener('click',()=>{paused=!paused;stars=[];glow.clearRect(0,0,width,height);label();schedule();});
   reduced.addEventListener('change',()=>{paused=reduced.matches;stars=[];glow.clearRect(0,0,width,height);label();schedule();});
   document.addEventListener('visibilitychange',schedule);
   addEventListener('resize',resize);
