@@ -72,3 +72,11 @@ header{justify-content:flex-end}
 .invitation-entry .entry-label .name-line{font:400 34px/1.15 Didot,'Bodoni 72',Georgia,serif;letter-spacing:.07em;font-variant:small-caps;margin:0;color:#fff0d1}
 .invitation-entry .entry-label:hover{filter:drop-shadow(0 0 7px #ffe4b4)}
 @media(max-width:500px){.invitation-entry{height:135px}.invitation-entry .entry-label .name-line{font-size:25px;letter-spacing:.03em}.invitation-entry .entry-label .welcome-line{font-size:14px}.invitation-entry .entry-label{gap:6px}}
+
+
+/* Illuminate ornament only when the text itself is hovered or focused. */
+.invitation-ornament{transition:filter .3s ease}
+.invitation-entry:has(.entry-label:hover) .invitation-ornament,
+.invitation-entry:has(.entry-label:focus-visible) .invitation-ornament,
+.invitation-entry:has(.entry-label:active) .invitation-ornament{filter:brightness(1.05) drop-shadow(0 0 2px #fff0c644)}
+@media(prefers-reduced-motion:reduce){.invitation-ornament{transition:none}}
