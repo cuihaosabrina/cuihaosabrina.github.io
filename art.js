@@ -11,7 +11,16 @@ function resize(){w=innerWidth;h=innerHeight;const d=Math.min(devicePixelRatio||
 function burst(x,y){const color=colors[Math.floor(Math.random()*colors.length)];for(let i=0;i<110;i++){const a=Math.PI*2*i/110,speed=rand(35,145);particles.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,life:rand(1.8,3.2),color,p:rand(0,6)})}particles=particles.slice(-700)}
 function launch(x=rand(.12,.88)*w,y=rand(.10,.38)*h){rockets.push({x,y:h*.66,target:y,v:rand(220,310)})}
 function butterfly(){const p=dressPoint(rand(.48,.55),rand(.79,.88));butterflies.push({x:p.x,y:p.y,age:0,life:rand(5,7),side:rand(-1,1),p:rand(0,6),size:rand(4,7)})}
-function draw(dt){ctx.clearRect(0,0,w,h);stars.forEach(s=>sparkle(s.x,s.y,s.r,.15+.65*Math.pow(.5+.5*Math.sin(t*1.5+s.p),3)));
+
+// Image-relative flowing water and meadow glints, aligned with the selected background.
+const falls=[{x:.108,y:.363,w:.025,h:.145},{x:.199,y:.413,w:.023,h:.105},{x:.288,y:.584,w:.025,h:.082},{x:.745,y:.563,w:.035,h:.11},{x:.891,y:.411,w:.034,h:.136}];
+const meadow=Array.from({length:110},()=>({x:rand(0,1),y:rand(.47,.99),p:rand(0,6),r:rand(.6,2.5)})).filter(s=>Math.abs(s.x-.50)>.105);
+function scenery(){
+const scale=Math.max(w/1536,h/1024);
+for(const f of falls){for(let i=0;i<12;i++){const q=(t*(.22+i*.009)+i*.137)%1;const x=f.x+(i/11-.5)*f.w*.8;const y=f.y+q*f.h;const a=point(x,y),b=point(x+.0007*Math.sin(t+i),Math.min(f.y+f.h,y+.012));const alpha=Math.sin(q*Math.PI)*(.12+.15*(.5+.5*Math.sin(t*2+i)));const g=ctx.createLinearGradient(a.x,a.y,b.x,b.y);g.addColorStop(0,'rgba(238,231,255,0)');g.addColorStop(.7,`rgba(240,245,255,${alpha})`);g.addColorStop(1,'rgba(255,255,255,0)');ctx.strokeStyle=g;ctx.lineWidth=scale*(.7+i%3*.45);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();if(i%4===0)sparkle(a.x,b.y,1.3,alpha*1.5)}}
+for(const s of meadow){const p=point(s.x+Math.sin(t*.5+s.p)*.0008,s.y);const a=Math.pow(.5+.5*Math.sin(t*1.2+s.x*12+s.p),5);sparkle(p.x,p.y,s.r*(.8+a),a*.75)}
+}
+function draw(dt){ctx.clearRect(0,0,w,h);scenery();stars.forEach(s=>sparkle(s.x,s.y,s.r,.15+.65*Math.pow(.5+.5*Math.sin(t*1.5+s.p),3)));
 rockets=rockets.filter(r=>{r.y-=r.v*dt;ctx.strokeStyle='#fff0d5';ctx.shadowColor='#ffe4ed';ctx.shadowBlur=12;ctx.lineWidth=1.8;ctx.beginPath();ctx.moveTo(r.x,r.y+32);ctx.lineTo(r.x,r.y);ctx.stroke();if(r.y<=r.target){burst(r.x,r.y);return false}return true});ctx.shadowBlur=0;
 particles=particles.filter(p=>p.life>0);particles.forEach(p=>{p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=22*dt;p.vx*=Math.pow(.65,dt);p.vy*=Math.pow(.92,dt);const alpha=Math.min(1,p.life)*(.65+.35*Math.sin(t*16+p.p)**2);ctx.strokeStyle=`rgba(${p.color},${alpha})`;ctx.shadowColor=`rgb(${p.color})`;ctx.shadowBlur=7;ctx.lineWidth=1.25;ctx.beginPath();ctx.moveTo(p.x-p.vx*.09,p.y-p.vy*.09);ctx.lineTo(p.x,p.y);ctx.stroke()});ctx.shadowBlur=0;
 petals.forEach(p=>{p.y+=dt*(12+p.r*2);p.x+=Math.sin(t*.7+p.p)*dt*15;if(p.y>h+10){p.y=-10;p.x=Math.random()*w}ctx.save();ctx.translate(p.x,p.y);ctx.rotate(t*.45+p.p);ctx.scale(.45+.5*Math.abs(Math.sin(t+p.p)),1);const g=ctx.createRadialGradient(0,0,0,0,0,p.r*2);g.addColorStop(0,'#fff');g.addColorStop(.5,'#ffe6fb');g.addColorStop(1,'#f3b4ed88');ctx.fillStyle=g;ctx.shadowColor='#ffe3fc';ctx.shadowBlur=12;ctx.beginPath();ctx.ellipse(0,0,p.r,p.r*1.8,0,0,7);ctx.fill();ctx.restore();if(Math.sin(t*2+p.p)>.8)sparkle(p.x,p.y,p.r*1.4,.8)});
