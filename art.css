@@ -87,3 +87,11 @@ header{justify-content:flex-end}
 .invitation-entry .entry-label:focus:not(:focus-visible){outline:none}
 .invitation-entry .entry-label:active{background:transparent;text-shadow:0 0 5px #fff7df,0 1px 3px #69506c}
 }
+
+/* Use a lettering glow instead of a rectangular focus ring on the entrance. */
+.invitation-entry .entry-label,
+.invitation-entry .entry-label *{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.invitation-entry .entry-label:focus,
+.invitation-entry .entry-label:focus-visible{outline:none;box-shadow:none}
+.invitation-entry .entry-label:focus-visible{text-shadow:0 0 5px #fff7df,0 0 12px #fff0c6;text-decoration:underline;text-decoration-color:#fff0c6;text-underline-offset:6px}
+@media(hover:none) and (pointer:coarse){.invitation-entry .entry-label:focus-visible{text-decoration:none;text-shadow:0 1px 3px #69506c}}
