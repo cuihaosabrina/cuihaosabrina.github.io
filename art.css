@@ -1,0 +1,56 @@
+*{box-sizing:border-box}body{margin:0;background:#100e27;color:#fff7f0;font-family:Georgia,'Times New Roman',serif;overflow:hidden}.dream,.landscape,.veil,#magic{position:fixed;inset:0}.landscape{background:url('dream-castle-v5.png') center 62%/cover no-repeat;transform:scale(1.025);animation:journey 40s ease-in-out infinite alternate}.veil{background:linear-gradient(90deg,rgba(14,10,35,.62),transparent 65%),linear-gradient(0deg,rgba(12,8,30,.65),transparent 25%,transparent 75%,rgba(12,8,30,.35));transition:opacity 2s}#magic{width:100%;height:100%;pointer-events:none}header{position:fixed;z-index:3;top:0;width:100%;padding:28px 4%;display:flex;justify-content:space-between;align-items:center;font:11px/1.4 system-ui;letter-spacing:.2em}header span{color:#f2d8e4}header i{font-style:normal;opacity:.45;margin:0 12px}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;background:transparent;border:0}header button{padding:10px;border:1px solid #f2d8e440;border-radius:30px;letter-spacing:.08em}.intro{position:absolute;z-index:2;left:7%;top:29%;transition:opacity 1.4s,transform 1.4s}.eyebrow{font:10px system-ui;letter-spacing:.35em;color:#ebcbdc}h1{font-size:clamp(45px,5.5vw,88px);font-weight:400;line-height:1.08;letter-spacing:-.045em;margin:24px 0}h1 em{font-weight:400;color:#f1d3e7}.subtitle{font-size:16px;line-height:1.7;color:#efe3f0b8}#enter{font:11px system-ui;letter-spacing:.16em;border:1px solid #f5dfef66;padding:17px 24px;margin-top:22px;border-radius:2px;background:#f4ddef0b;backdrop-filter:blur(8px)}#enter span{margin-left:30px}footer{position:fixed;bottom:25px;left:4%;right:4%;display:flex;justify-content:space-between;font:11px system-ui;letter-spacing:.07em;color:#fff4eeaa;z-index:2}#replay{display:none}.immersed .intro{opacity:0;transform:translateY(-15px);pointer-events:none}.immersed .veil{opacity:.3}.immersed #replay{display:block}.paused .landscape{animation-play-state:paused}button:hover,a:hover{color:#fff;text-shadow:0 0 15px #f7dafc}button:focus-visible,a:focus-visible{outline:2px solid #ead2f4;outline-offset:5px}@keyframes journey{to{transform:scale(1.12) translateY(1%)}}@media(max-width:600px){.landscape{background-position:55% center}.intro{left:8%;top:22%}h1{font-size:48px}.veil{background:linear-gradient(90deg,#120d327a,transparent),linear-gradient(0deg,#100d27b0,transparent 40%)}header{padding-top:22px}header span{font-size:9px}footer{font-size:10px;gap:20px}}@media(prefers-reduced-motion:reduce){.landscape{animation:none}.intro,.veil{transition:none}}
+
+/* Pastel illustrated dream */
+body{background:#e4dbf3;color:#514568}.veil{background:linear-gradient(90deg,rgba(247,239,255,.58),transparent 60%),linear-gradient(0deg,rgba(243,232,253,.2),transparent 25%)}header span{color:#665177}header button{border-color:#78618c55;background:#fff8ff66;backdrop-filter:blur(8px)}.eyebrow{color:#765984}h1 em{color:#82618b}.subtitle{color:#675879}#enter{background:#fff9ff80;border-color:#92779f66}footer{color:#574469;background:#fff8ff70;padding:10px 15px;border-radius:20px;backdrop-filter:blur(8px)}button:hover,a:hover{color:#8a5388;text-shadow:0 0 15px #fff}.immersed .veil{opacity:0}@media(max-width:600px){.landscape{background-position:57% center}.veil{background:linear-gradient(90deg,#f7efff80,transparent)}}
+
+body{color:#fff4ff;background:#6563b1}header span,.eyebrow,.subtitle,h1 em{color:#fff0ff}header button,#enter{background:#65509330;border-color:#fff3ff80}footer{background:#68518e30;color:#fff3ff}.veil{background:linear-gradient(90deg,#403c8045,transparent 60%)}.landscape{background-position:center center}button:hover,a:hover{color:#fff}@media(max-width:600px){.landscape{background-position:center center}.veil{background:linear-gradient(90deg,#403c8030,transparent)}}
+
+.landscape{animation:none;transform:none;background-position:center center}.veil{display:none}footer{width:max-content;max-width:90%;right:auto}
+
+.world-entry{position:fixed;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;white-space:nowrap;padding:22px 34px;border:1px solid #fff4ffd0;border-radius:50px;background:linear-gradient(120deg,#453e8175,#9565a65c);backdrop-filter:blur(12px);color:#fff;font:clamp(19px,3vw,30px)/1.3 Georgia,serif;letter-spacing:.03em;box-shadow:0 0 45px #e8c3ff40,inset 0 0 22px #ffffff15;text-shadow:0 2px 12px #514374;transition:box-shadow .3s,background .3s}.world-entry span{font-size:.65em;margin-left:12px}.world-entry:hover{background:#7962a099;box-shadow:0 0 60px #f4d8ff80}.world-entry:focus-visible{outline:3px solid white;outline-offset:7px}@media(max-width:500px){.world-entry{padding:20px 22px;width:max-content;max-width:92%;font-size:21px}}
+
+/* Floral invitation, local preview */
+.world-entry{width:520px;max-width:94vw;height:140px;padding:0 50px;display:flex;justify-content:center;align-items:center;gap:12px;border:0;border-radius:0;background:transparent;backdrop-filter:none;box-shadow:none;text-shadow:0 0 9px #fff8ff99,0 2px 14px #554071;white-space:nowrap}
+.world-entry::before{content:"";position:absolute;inset:20px 30px;background:radial-gradient(ellipse,#8666b06b,transparent 72%);z-index:-1;filter:blur(8px)}
+.world-entry .entry-label{font-family:"Snell Roundhand","Apple Chancery","URW Chancery L","Palatino Linotype",cursive;font-style:italic;font-weight:400;font-size:clamp(23px,4vw,35px);letter-spacing:.015em;margin:0;color:#fff8ff}
+.floral-frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;filter:drop-shadow(0 0 5px #fff1ffa0)}
+.world-entry .entry-ornament{margin:0;font-size:18px;color:#fff5d9;animation:invitation-twinkle 3s ease-in-out infinite}.world-entry .entry-ornament:nth-of-type(3){animation-delay:1.3s}
+.world-entry:hover{background:transparent;box-shadow:none;text-shadow:0 0 15px white}.world-entry:hover .floral-frame{filter:drop-shadow(0 0 9px #fff1ff)}
+@keyframes invitation-twinkle{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
+@media(max-width:500px){.world-entry{height:120px;padding:0 32px;gap:5px}.world-entry .entry-label{font-size:25px}.world-entry .entry-ornament{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.world-entry .entry-ornament{animation:none}}
+
+/* Legible floral entrance */
+header{justify-content:flex-end}
+.world-entry{height:150px;isolation:isolate;transition:transform .25s,text-shadow .25s;cursor:pointer}
+.world-entry::before{inset:25px 29px;border-radius:50%;background:radial-gradient(ellipse,rgba(51,34,98,.88) 0%,rgba(72,45,116,.78) 48%,rgba(103,68,140,.35) 72%,transparent 76%);filter:blur(3px);box-shadow:0 0 32px #e4c5ff30;transition:background .25s,box-shadow .25s}
+.world-entry .entry-label{font-weight:700;font-size:clamp(26px,4vw,38px);text-shadow:0 2px 4px #372044,0 0 14px #f7cfff88;color:#fffaff}
+.world-entry .floral-frame{filter:drop-shadow(0 2px 2px #583667) drop-shadow(0 0 5px #f2c9ff80)}
+.world-entry:hover,.world-entry:focus-visible{transform:translate(-50%,-50%) scale(1.045)}
+.world-entry:hover::before,.world-entry:focus-visible::before{background:radial-gradient(ellipse,#533777ed 0%,#8253a5cc 48%,#d8a3ef66 72%,transparent 76%);box-shadow:0 0 45px #f2caff88}
+.world-entry:hover .floral-frame{filter:drop-shadow(0 0 8px #ffe9ff)}
+.world-entry:active{transform:translate(-50%,-50%) scale(.97)}
+@media(max-width:500px){.world-entry .entry-label{font-size:28px}.world-entry{height:132px}}
+@media(prefers-reduced-motion:reduce){.world-entry,.world-entry::before{transition:none}}
+
+/* Pearl leaf invitation */
+.world-entry::before{inset:18px 22px;border-radius:85% 8% 85% 8% / 85% 12% 85% 12%;background:linear-gradient(145deg,#fffdf2d9,#f8f4e8ca 38%,#dcebe6c9 75%,#fffaf5cc);filter:none;box-shadow:inset 0 0 24px #fffdf3cc,0 0 24px #fff8e966;border:1px solid #fffcecaa;transform:rotate(-3deg)}
+.world-entry .entry-label{color:#655775;text-shadow:0 1px 0 #fff,0 0 7px #fff9ee;font-weight:700}
+.world-entry .entry-ornament{color:#b69265;text-shadow:0 0 5px #fff}
+.world-entry .floral-frame{filter:drop-shadow(0 1px 1px #968f9580);opacity:.95}
+.world-entry:hover::before,.world-entry:focus-visible::before{background:linear-gradient(145deg,#fffef4ee,#fff8e3e8 40%,#e1f2e7e0);box-shadow:inset 0 0 26px white,0 0 36px #fff5caaa}
+.world-entry:hover .floral-frame{filter:drop-shadow(0 0 5px #fff4db)}
+
+/* Unframed starlit lettering */
+.world-entry::before{display:none}
+.world-entry,.world-entry:hover,.world-entry:focus-visible{background:none;border:0;box-shadow:none;backdrop-filter:none}
+.world-entry .entry-label{color:#fffdf6;text-shadow:0 2px 5px #514779,0 0 14px #8470b8,0 0 25px #fff1fc88}
+.world-entry .entry-ornament{color:#fff7d9}
+.world-entry .flower-spark,.world-entry .star-spark{position:absolute;margin:0;pointer-events:none;font-style:normal;line-height:1;animation:flower-glimmer 4s ease-in-out infinite;text-shadow:0 0 7px #fff,0 0 16px #ffd7f3}
+.world-entry .flower-spark{font:25px Georgia,serif;color:#ffe5f4}.world-entry .flower-one{left:9%;top:25%;animation-delay:-1s}.world-entry .flower-two{right:9%;bottom:22%;font-size:20px;animation-delay:-2.5s}.world-entry .flower-three{right:19%;top:16%;font-size:15px;animation-delay:-.4s}
+.world-entry .star-spark{color:#fff6d9;font-size:16px}.world-entry .star-one{left:24%;bottom:18%;animation-delay:-2s}.world-entry .star-two{right:4%;top:40%;font-size:22px;animation-delay:-3s}.world-entry .star-three{left:4%;top:53%;font-size:11px;animation-delay:-.8s}
+.world-entry:hover .entry-label{text-shadow:0 0 6px #fff,0 2px 6px #675083,0 0 22px #ffdcf6}
+@keyframes flower-glimmer{0%,100%{opacity:.4;transform:scale(.85) rotate(-8deg)}50%{opacity:1;transform:scale(1.12) rotate(8deg)}}
+@media(prefers-reduced-motion:reduce){.world-entry .flower-spark,.world-entry .star-spark{animation:none}}
+
+.flower-spark svg{display:block;overflow:visible;filter:drop-shadow(0 0 5px #fff0f5)}.flower-two svg{width:28px;height:28px}.flower-three svg{width:22px;height:22px}
