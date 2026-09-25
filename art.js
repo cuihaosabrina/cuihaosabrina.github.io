@@ -36,3 +36,12 @@ const pauseButton=document.querySelector('#pause');if(pauseButton)pauseButton.on
 
 const entrance=document.querySelector('#enter-world');
 if(entrance){entrance.addEventListener('click',()=>{location.href='home.html?enter=1'});entrance.addEventListener('contextmenu',event=>event.preventDefault());}
+
+const academicEntrance=document.querySelector('.academic-entrance');
+if(academicEntrance)academicEntrance.addEventListener('click',event=>{
+ if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+ event.preventDefault();
+ if(academicEntrance.classList.contains('is-entering'))return;
+ academicEntrance.classList.add('is-entering');
+ setTimeout(()=>{location.href=academicEntrance.href},reduce.matches?0:350);
+});
