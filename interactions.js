@@ -60,7 +60,7 @@ document.querySelectorAll('[data-research]').forEach(node => node.addEventListen
 
 const themeToggle=document.querySelector('#theme-toggle');
 function themeLabel(){const dark=document.documentElement.dataset.theme==='dark';themeToggle.textContent=dark?'☀ Light':'☾ Dark';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
-themeToggle.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('theme-v2',theme)}catch(e){}themeLabel();});
+themeToggle.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('theme-v2',theme);sessionStorage.setItem('theme-session-v1',theme)}catch(e){}themeLabel();});
 themeLabel();
 document.querySelector('#load-x')?.addEventListener('click',()=>{
  const button=document.querySelector('#load-x');button.disabled=true;button.textContent='Loading…';
