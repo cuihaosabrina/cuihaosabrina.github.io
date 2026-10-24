@@ -1,7 +1,193 @@
 <!DOCTYPE html>
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><script>try{const theme=sessionStorage.getItem('theme-session-v1')||'light';document.documentElement.dataset.theme=theme;localStorage.setItem('theme-v2',theme)}catch(e){document.documentElement.dataset.theme='light'}</script><title>Hao Cui | Human–AI interaction &amp; collective intelligence</title><meta content="Hao Cui is a Research Fellow at Trinity College Dublin studying human–AI interaction, collective intelligence, and social networks." name="description"/><meta content="#245c65" name="theme-color"/><link href="portrait.jpeg?v=35" rel="icon" type="image/jpeg"/><link href="style.css?v=42" rel="stylesheet"/></head><body><canvas aria-hidden="true" id="network-background"></canvas>
-<a class="skip" href="#main">Skip to content</a><header><nav aria-label="Main navigation"><div><a class="dream-return" href="art.html">✧ Dream entrance</a><a href="#about">Home</a><a href="publications.html">Publications</a><a href="talks.html">Talks</a><a href="teaching.html">Teaching</a><a href="gallery.html">Gallery</a></div><button aria-haspopup="dialog" aria-label="Search website" id="search-toggle" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" viewbox="0 0 24 24" width="18"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg></button><button aria-label="Switch to dark mode" id="theme-toggle" type="button">☾ Dark</button></nav></header>
+<a class="skip" href="#main">Skip to content</a><header><nav aria-label="Main navigation"><div><a class="dream-return" href="art.html">✧ Dream entrance</a><a href="#about">Home</a><a href="publications.html">Publications</a><a href="talks.html">Talks</a><a href="gallery.html">Gallery</a></div><button aria-haspopup="dialog" aria-label="Search website" id="search-toggle" type="button"><svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" viewbox="0 0 24 24" width="18"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg></button><button aria-label="Switch to dark mode" id="theme-toggle" type="button">☾ Dark</button></nav></header>
 <div class="layout"><aside><img alt="Portrait of Hao Cui" class="portrait" height="767" src="portrait.jpeg" width="1024"/><h1>Hao Cui</h1><p class="role">Research Fellow</p><p>Trinity College Dublin</p><p class="degree">Ph.D. in Network Science<br/>Central European University</p><div class="profile-links"><a href="mailto:cuih1@tcd.ie"><svg aria-hidden="true" class="profile-icon icon-email" fill="currentColor" focusable="false" viewbox="0 0 24 24"><rect fill="none" height="14" rx="2" stroke="currentColor" stroke-width="1.7" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.7"></path></svg>Email</a><a href="https://scholar.google.com/citations?user=l_Igub8AAAAJ"><svg aria-hidden="true" class="profile-icon icon-scholar" fill="currentColor" focusable="false" viewbox="0 0 24 24"><path d="M12 2 0 10l12 8 12-8z"></path><path d="M5 14v5c4 4 10 4 14 0v-5l-7 5z"></path></svg>Google Scholar</a><a href="https://orcid.org/0000-0002-0036-8089"><svg aria-hidden="true" class="profile-icon icon-orcid" fill="currentColor" focusable="false" viewbox="0 0 24 24"><circle cx="12" cy="12" r="12"></circle><g fill="white"><circle cx="6.5" cy="6.5" r="1.3"></circle><path d="M5.5 9h2v10h-2zM10 5.5h4a6.75 6.75 0 0 1 0 13.5h-4zm2 2V17h2a4.75 4.75 0 0 0 0-9.5z"></path></g></svg>ORCID</a><a href="https://github.com/cuihaosabrina"><svg aria-hidden="true" class="profile-icon icon-github" fill="currentColor" focusable="false" viewbox="0 0 24 24"><path d="M12 .6a11.7 11.7 0 0 0-3.7 22.8c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.4-1.3-5.4-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.8 5.5-5.4 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.7 11.7 0 0 0 12 .6z"></path></svg>GitHub</a><a href="https://bsky.app/profile/cuihaosabrina.bsky.social"><svg aria-hidden="true" class="profile-icon icon-bluesky" fill="currentColor" focusable="false" viewbox="0 0 24 24"><path d="M5.2 3.2C8 5.3 11 9.5 12 11.8c1-2.3 4-6.5 6.8-8.6C20.8 1.7 24 .5 24 4.2c0 .7-.4 6.2-.7 7.1-1 3.1-4.5 3.9-7.7 3.4 5.6.9 7 3.8 3.9 6.7-5.8 5.9-7-1.5-7.5-3.4-.5 1.9-1.7 9.3-7.5 3.4-3.1-2.9-1.7-5.8 3.9-6.7-3.2.5-6.7-.3-7.7-3.4C.4 10.4 0 4.9 0 4.2 0 .5 3.2 1.7 5.2 3.2z"></path></svg>Bluesky</a><a href="https://www.linkedin.com/in/hao-cui-317104b7"><svg aria-hidden="true" class="profile-icon icon-linkedin" fill="currentColor" focusable="false" viewbox="0 0 24 24"><rect height="24" rx="3" width="24"></rect><g fill="white"><circle cx="5.7" cy="5.7" r="1.7"></circle><path d="M4.2 9h3v11h-3zM10 9h3v1.5c1-2.2 6.8-2.6 6.8 3.8V20h-3v-5.3c0-3-3.8-3-3.8 0V20h-3z"></path></g></svg>LinkedIn</a></div></aside>
-<main id="main"><section id="about"><h2>About me</h2><p>I am a Research Fellow at <a href="https://peoplefinder.tcd.ie/Profile?Username=CUIH1">Trinity College Dublin</a>, where I study human–machine social systems. I am the lead author of a review on <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a>, bringing together complexity science and network science to understand how hybrid systems think, adapt, and make decisions.</p><p>My current research focuses on human–AI interaction in collaborative settings: how people perceive and behave toward AI as its roles and levels of agency vary. Through online behavioral experiments, I examine these dynamics and the wider implications of integrating AI into social systems and decision-making.</p><p>Previously, I was a postdoctoral researcher at University College Dublin’s School of Sociology and Geary Institute for Public Policy. I earned my Ph.D. in <a href="https://networkdatascience.ceu.edu/">Network Science</a> at Central European University in Vienna, studying collective attention, online behavior, and the emergence of popular hashtags through large-scale data analysis.</p><p>My research has been featured in <a href="https://theconversation.com/ai-could-supercharge-human-collective-intelligence-in-everything-from-disaster-relief-to-medical-research-249437?utm_medium=article_clipboard_share&amp;utm_source=theconversation.com">The Conversation</a>, <a href="https://www.volkskrant.nl/kijkverder/v/2022/de-oorlog-volgens-weibo~v492759/">de Volkskrant</a>, and <a href="https://www.mittrchina.com/news/detail/13292">MIT Technology Review</a> (Chinese edition).</p><blockquote class="profile-quote"><p>“The real danger is not that computers will begin to think like humans, but that humans will begin to think like computers.”</p><cite>— Sydney J. Harris</cite></blockquote></section><section id="research"><h2>Research interests</h2><ul class="interests"><li>Human–AI interaction and collective intelligence</li><li>Computational social science and complex systems</li><li>Social networks, attention dynamics, and popularity</li></ul></section><section id="news"><div class="section-heading"><h2>News</h2></div><ul class="news-list"><li><time datetime="2026-06">Jun 2026</time><span>Our article, <a href="https://blogs.lse.ac.uk/impactofsocialsciences/2026/06/12/gendered-ai-design-reflects-and-reinforces-societys-biases/">Gendered AI design reflects and reinforces society’s biases</a>, is published in <em>LSE Impact</em>.</span></li><li><time datetime="2026">2026</time><span>New publication: <a href="https://doi.org/10.1016/j.chbr.2026.100984">Gender bias in perception of human managers extends to AI managers</a>, with Taha Yasseri, in <em>Computers in Human Behavior Reports</em>.</span></li></ul></section><section id="publications"><div class="section-heading"><h2>Selected publications</h2><a href="https://scholar.google.com/citations?user=l_Igub8AAAAJ">Google Scholar ↗</a></div><article class="publication" data-topic="ai"><span class="year">2026</span><div><h3><a href="https://doi.org/10.1016/j.chbr.2026.100984">Gender bias in perception of human managers extends to AI managers</a></h3><p><strong>Hao Cui</strong>, Taha Yasseri</p><p class="venue">Computers in Human Behavior Reports, 21, 100984</p></div></article><article class="publication" data-topic="ai"><span class="year">2024</span><div><h3><a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a></h3><p><strong>Hao Cui</strong>, Taha Yasseri</p><p class="venue">Patterns, 5(11), 101074</p></div></article><article class="publication" data-topic="networks"><span class="year">2021</span><div><h3><a href="https://doi.org/10.1140/epjds/s13688-021-00263-0">Attention dynamics on the Chinese social media Sina Weibo during the COVID-19 pandemic</a></h3><p><strong>Hao Cui</strong>, János Kertész</p><p class="venue">EPJ Data Science, 10, 8</p></div></article></section>
+<main id="main"><section id="about"><h2>About me</h2><p>I am a Research Fellow at <a href="https://peoplefinder.tcd.ie/Profile?Username=CUIH1">Trinity College Dublin</a>, where I study human–machine social systems. I am the lead author of a review on <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a>, bringing together complexity science and network science to understand how hybrid systems think, adapt, and make decisions.</p><p>My current research focuses on human–AI interaction in collaborative settings: how people perceive and behave toward AI as its roles and levels of agency vary. Through online behavioral experiments, I examine these dynamics and the wider implications of integrating AI into social systems and decision-making.</p><p>Previously, I was a postdoctoral researcher at University College Dublin’s School of Sociology and Geary Institute for Public Policy. I earned my Ph.D. in <a href="https://networkdatascience.ceu.edu/">Network Science</a> at Central European University in Vienna, studying collective attention, online behavior, and the emergence of popular hashtags through large-scale data analysis.</p><p>My research has been featured in <a href="https://theconversation.com/ai-could-supercharge-human-collective-intelligence-in-everything-from-disaster-relief-to-medical-research-249437?utm_medium=article_clipboard_share&amp;utm_source=theconversation.com">The Conversation</a>, <a href="https://www.volkskrant.nl/kijkverder/v/2022/de-oorlog-volgens-weibo~v492759/">de Volkskrant</a>, and <a href="https://www.mittrchina.com/news/detail/13292">MIT Technology Review</a> (Chinese edition).</p><blockquote class="profile-quote"><p>“The real danger is not that computers will begin to think like humans, but that humans will begin to think like computers.”</p><cite>— Sydney J. Harris</cite></blockquote></section><section id="research" aria-labelledby="rm-heading">
+<div id="research-map">
+<style>
+#research-map {
+  --rm-accent: #245c65;
+  --rm-line: color-mix(in srgb, currentColor 18%, transparent);
+  --rm-line-strong: color-mix(in srgb, currentColor 32%, transparent);
+  --rm-tint: rgba(36, 92, 101, 0.07);
+  --rm-soft: color-mix(in srgb, currentColor 4%, transparent);
+  --rm-card: rgba(252, 252, 250, 0.94);
+  --rm-muted: color-mix(in srgb, currentColor 62%, transparent);
+  font-size: 15px;
+  line-height: 1.55;
+}
+#research-map * { box-sizing: border-box; }
+:root[data-theme="dark"] #research-map { --rm-accent: #a8d8d6; --rm-tint: rgba(168, 216, 214, 0.08); --rm-card: rgba(17, 22, 25, 0.94); }
+#research-map .rm-lede { color: var(--rm-muted); margin: 0 0 1.25rem; font-size: 14px; }
+#research-map .rm-box { border: 1px solid var(--rm-line); border-radius: 12px; padding: 14px 16px; background-color: var(--rm-card); }
+#research-map .rm-list { background: var(--rm-card); border-radius: 0 0 8px 8px; }
+#research-map .rm-root { border: 1.5px solid var(--rm-accent); background-image: linear-gradient(var(--rm-tint), var(--rm-tint)); text-align: center; }
+#research-map .rm-root strong { display: block; font: 19px/1.4 Georgia, "Times New Roman", serif; color: var(--rm-accent); margin-bottom: 2px; }
+#research-map .rm-root span { font-size: 13px; color: var(--rm-muted); }
+#research-map .rm-frame { border-style: dashed; background-image: linear-gradient(var(--rm-soft), var(--rm-soft)); }
+#research-map .rm-label { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rm-muted); margin-bottom: 4px; }
+#research-map .rm-frame a { color: inherit; }
+#research-map .rm-v { width: 1px; height: 20px; background: var(--rm-line-strong); margin: 0 auto; }
+#research-map .rm-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: start; }
+@media (max-width: 680px) { #research-map .rm-cols { grid-template-columns: minmax(0, 1fr); } }
+#research-map .rm-stage { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: pointer; border: 1px solid var(--rm-line-strong); border-radius: 12px; padding: 12px 14px; background: linear-gradient(var(--rm-soft), var(--rm-soft)), var(--rm-card); }
+#research-map .rm-stage:hover { border-color: var(--rm-accent); }
+#research-map .rm-stage:focus-visible { outline: 2px solid var(--rm-accent); outline-offset: 2px; }
+#research-map .rm-stage[aria-expanded="true"] { border: 1.5px solid var(--rm-accent); background: linear-gradient(var(--rm-tint), var(--rm-tint)), var(--rm-card); }
+#research-map .rm-axis { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; color: var(--rm-accent); }
+#research-map .rm-axis-line { flex: 1; height: 1px; background: var(--rm-accent); opacity: 0.5; }
+#research-map .rm-axis-text { font-size: 12px; background: var(--rm-card); padding: 0 6px; letter-spacing: 0.04em; white-space: nowrap; }
+#research-map .rm-axis-head { font-size: 14px; line-height: 1; margin-left: -12px; opacity: 0.8; }
+@media (max-width: 680px) { #research-map .rm-axis { display: none; } }
+#research-map .rm-title { font: 17px/1.35 Georgia, "Times New Roman", serif; color: var(--rm-accent); }
+#research-map .rm-sub { font-size: 13px; color: var(--rm-muted); margin-top: 2px; }
+#research-map .rm-count { font-size: 12px; color: var(--rm-muted); margin-top: 8px; display: flex; justify-content: space-between; }
+#research-map .rm-chev { transition: transform 0.2s; display: inline-block; }
+#research-map .rm-stage[aria-expanded="true"] .rm-chev { transform: rotate(180deg); }
+#research-map .rm-list { padding: 8px 4px 0; }
+#research-map .rm-q { font-size: 13px; font-style: italic; color: var(--rm-muted); margin-bottom: 6px; }
+#research-map .rm-paper { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: pointer; border-top: 1px solid var(--rm-line); padding: 9px 2px; }
+#research-map .rm-paper:focus-visible { outline: 2px solid var(--rm-accent); outline-offset: 2px; }
+#research-map .rm-pt { font-size: 14px; font-weight: 600; line-height: 1.4; }
+#research-map .rm-paper:hover .rm-pt { color: var(--rm-accent); }
+#research-map .rm-venue { font-size: 12px; color: var(--rm-muted); }
+#research-map .rm-detail { font-size: 13px; color: var(--rm-muted); margin: 4px 0 8px; padding-left: 10px; border-left: 2px solid var(--rm-accent); }
+#research-map .rm-detail a { color: var(--rm-accent); }
+#research-map .rm-next { border-style: dashed; text-align: center; }
+#research-map .rm-next strong { font: 16px/1.4 Georgia, "Times New Roman", serif; }
+#research-map .rm-next span { display: block; font-size: 13px; color: var(--rm-muted); }
+#research-map .rm-controls { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+#research-map .rm-btn { all: unset; cursor: pointer; font-size: 13px; padding: 5px 12px; border: 1px solid var(--rm-line-strong); border-radius: 8px; }
+#research-map .rm-btn:hover { border-color: var(--rm-accent); color: var(--rm-accent); }
+#research-map .rm-btn:focus-visible { outline: 2px solid var(--rm-accent); outline-offset: 2px; }
+</style>
+
+  <h2 id="rm-heading">Research</h2>
+  <p class="rm-lede">My work follows machines as they take on deeper roles in social life. Click a role to see the projects behind it, and click a project to see how it fits.</p>
+
+  <div class="rm-box rm-root">
+    <strong>Collective dynamics in human–machine social systems</strong>
+    <span>How attention, belief and knowledge emerge when humans and machines interact</span>
+  </div>
+  <div class="rm-v"></div>
+  <div class="rm-box rm-frame">
+    <div class="rm-label">Conceptual framework</div>
+    <div style="font-size:14px">
+      <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a> <span style="color:var(--rm-muted)">(Patterns, 2024)</span>
+      &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2610.17487">Behavioural sociology of humans and machines</a> <span style="color:var(--rm-muted)">(Springer Handbook of Hybrid Intelligence, accepted)</span>
+    </div>
+  </div>
+  <div class="rm-v"></div>
+  <div class="rm-axis" aria-hidden="true"><span class="rm-axis-line"></span><span class="rm-axis-text">Machines take on deeper roles</span><span class="rm-axis-line"></span><span class="rm-axis-head">▸</span></div>
+  <div class="rm-cols" id="rm-cols"></div>
+  <div class="rm-v"></div>
+  <div class="rm-box rm-next">
+    <div class="rm-label">Looking ahead</div>
+    <strong>Designing human–machine systems that enhance collective intelligence</strong>
+    <span>Moving from describing these dynamics to shaping them</span>
+  </div>
+  <div class="rm-controls">
+    <button type="button" class="rm-btn" data-rm-all="open">Expand all</button>
+    <button type="button" class="rm-btn" data-rm-all="close">Collapse all</button>
+  </div>
+
+<script>
+(function () {
+  var STAGES = [
+    { title: "Machine as curator", sub: "Collective attention · 2018–2022",
+      q: "How do algorithms and platforms decide what crowds pay attention to?",
+      papers: [
+        { t: "Attention dynamics on the Chinese social media Sina Weibo during the COVID-19 pandemic", v: "EPJ Data Science, 2021", url: "https://doi.org/10.1140/epjds/s13688-021-00263-0",
+          d: "Weibo's Hot Search List is an algorithmically ranked gateway to public attention. This paper traces how collective attention was allocated and how quickly it faded during the pandemic, drawing on large-scale platform data." },
+        { t: "Born in Rome or Sleeping Beauty: Emergence of hashtag popularity on Sina Weibo", v: "Physica A, 2023", url: "https://doi.org/10.1016/j.physa.2023.128724",
+          d: "Asks how a hashtag becomes popular by linking the evolution of its repost network to its trajectory on the trending list." },
+        { t: "Competition for popularity and interventions on a Chinese microblogging site", v: "PLOS ONE, 2023", url: "https://doi.org/10.1371/journal.pone.0286093",
+          d: "Shows how platform interventions reshape the competition among topics for public attention, an early look at how non-human actors steer collective outcomes." }
+      ] },
+    { title: "Machine as participant", sub: "Belief and social evaluation · 2023–present",
+      q: "When AI joins the interaction, how do groups form beliefs and grant authority?",
+      papers: [
+        { t: "Tuning AI influence modifies human–AI collective belief dynamics", v: "Working paper",
+          d: "Places AI agents with adjustable influence inside an opinion dynamics model and shows how tuning that influence changes the beliefs that mixed human–AI populations converge on." },
+        { t: "Gender bias in perception of human managers extends to AI managers", v: "Computers in Human Behavior Reports, 2026", url: "https://doi.org/10.1016/j.chbr.2026.100984",
+          d: "Online experiments show that female managers are judged more harshly, and that the bias persists when the manager is an AI. When machines take on positions of authority, existing social hierarchies travel with them." },
+        { t: "Visual anthropomorphism shifts evaluations of gendered AI managers", v: "Computers in Human Behavior: Artificial Humans, 2026", url: "https://doi.org/10.1016/j.chbah.2026.100338",
+          d: "Tests how the visual design of an AI manager changes the way people evaluate it, with implications for how AI in social roles should be designed." },
+        { t: "From Birdwatch to Community Notes: four years of community-based content moderation", v: "Journal of Quantitative Description: Digital Media, 2026", url: "https://doi.org/10.51685/jqd.2026.013",
+          d: "Examines community fact-checking on Twitter/X, where an algorithm aggregates the judgements of many contributors into a shared verdict on what is misleading." },
+        { t: "Right sizing AI at work: Workforce transformation and human–machine partnerships in Ireland", v: "Industry insights report, 2026", linkText: "Read the report", url: "https://www.skillnetireland.ie/uploads/attachments/Right-Sizing-AI-at-Work_Industry-Insights-Report.pdf",
+          d: "Looks at how Irish organisations bring AI into their workforce and how human–machine partnerships are taking shape in practice." }
+      ] },
+    { title: "Machine as author", sub: "Collective knowledge · 2025–present",
+      q: "What changes when a machine writes the knowledge we share?",
+      papers: [
+        { t: "Comparing epistemic styles in Grokipedia and Wikipedia", v: "Work in progress",
+          d: "Compares the AI-generated Grokipedia with the collaboratively written Wikipedia to understand how knowledge is framed, sourced and justified when an AI becomes its author." }
+      ] }
+  ];
+
+  var root = document.getElementById("rm-cols");
+  var esc = function (s) { var e = document.createElement("span"); e.textContent = s; return e.innerHTML; };
+
+  STAGES.forEach(function (s, i) {
+    var col = document.createElement("div");
+    var listId = "rm-list-" + i;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "rm-stage";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", listId);
+    btn.innerHTML =
+      '<div class="rm-title">' + esc(s.title) + '</div>' +
+      '<div class="rm-sub">' + esc(s.sub) + '</div>' +
+      '<div class="rm-count"><span>' + s.papers.length + (s.papers.length === 1 ? ' project' : ' projects') + '</span><span class="rm-chev" aria-hidden="true">▾</span></div>';
+
+    var list = document.createElement("div");
+    list.className = "rm-list";
+    list.id = listId;
+    list.hidden = true;
+    list.innerHTML = '<div class="rm-q">' + esc(s.q) + '</div>';
+
+    s.papers.forEach(function (p, j) {
+      var item = document.createElement("button");
+      item.type = "button";
+      item.className = "rm-paper";
+      item.setAttribute("aria-expanded", "false");
+      item.innerHTML = '<div class="rm-pt">' + esc(p.t) + '</div><div class="rm-venue">' + esc(p.v) + '</div>';
+      var det = document.createElement("div");
+      det.className = "rm-detail";
+      det.hidden = true;
+      det.innerHTML = esc(p.d) + (p.url ? ' <a href="' + p.url + '" target="_blank" rel="noopener">' + (p.linkText || 'Read the paper') + ' ↗</a>' : '');
+      item.addEventListener("click", function () {
+        det.hidden = !det.hidden;
+        item.setAttribute("aria-expanded", String(!det.hidden));
+      });
+      list.appendChild(item);
+      list.appendChild(det);
+    });
+
+    btn.addEventListener("click", function () {
+      list.hidden = !list.hidden;
+      btn.setAttribute("aria-expanded", String(!list.hidden));
+    });
+
+    col.appendChild(btn);
+    col.appendChild(list);
+    root.appendChild(col);
+  });
+
+  document.querySelectorAll("#research-map [data-rm-all]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var open = b.getAttribute("data-rm-all") === "open";
+      document.querySelectorAll("#research-map .rm-stage").forEach(function (s) {
+        s.setAttribute("aria-expanded", String(open));
+        document.getElementById(s.getAttribute("aria-controls")).hidden = !open;
+      });
+    });
+  });
+})();
+</script>
+</div>
+</section><section id="news"><div class="section-heading"><h2>News</h2></div><ul class="news-list"><li><time datetime="2026-06">Jun 2026</time><span>Our article, <a href="https://blogs.lse.ac.uk/impactofsocialsciences/2026/06/12/gendered-ai-design-reflects-and-reinforces-societys-biases/">Gendered AI design reflects and reinforces society’s biases</a>, is published in <em>LSE Impact</em>.</span></li><li><time datetime="2026">2026</time><span>New publication: <a href="https://doi.org/10.1016/j.chbr.2026.100984">Gender bias in perception of human managers extends to AI managers</a>, with Taha Yasseri, in <em>Computers in Human Behavior Reports</em>.</span></li></ul></section><section id="publications"><div class="section-heading"><h2>Selected publications</h2><a href="https://scholar.google.com/citations?user=l_Igub8AAAAJ">Google Scholar ↗</a></div><article class="publication" data-topic="ai"><span class="year">2026</span><div><h3><a href="https://doi.org/10.1016/j.chbr.2026.100984">Gender bias in perception of human managers extends to AI managers</a></h3><p><strong>Hao Cui</strong>, Taha Yasseri</p><p class="venue">Computers in Human Behavior Reports, 21, 100984</p></div></article><article class="publication" data-topic="ai"><span class="year">2024</span><div><h3><a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a></h3><p><strong>Hao Cui</strong>, Taha Yasseri</p><p class="venue">Patterns, 5(11), 101074</p></div></article><article class="publication" data-topic="networks"><span class="year">2021</span><div><h3><a href="https://doi.org/10.1140/epjds/s13688-021-00263-0">Attention dynamics on the Chinese social media Sina Weibo during the COVID-19 pandemic</a></h3><p><strong>Hao Cui</strong>, János Kertész</p><p class="venue">EPJ Data Science, 10, 8</p></div></article></section>
 <section id="media"><div class="section-heading"><h2>Media &amp; gallery</h2><a href="gallery.html">Full gallery ↗</a></div><div class="image-gallery"><div class="gallery-frame"><button aria-label="Enlarge image: Interview on AI and understanding, at DeepTech, China" class="image-open" data-caption="Interview on AI and understanding, at DeepTech, China" data-image="gallery-1.jpeg" data-link="https://www.tcd.ie/soham/news-and-events/news-2025/ai-and-understanding/" type="button"><img alt="" loading="lazy" src="gallery-1.jpeg"/><span aria-hidden="true" class="view-label">View image ⤢</span></button><a class="gallery-card gallery-item" href="https://www.tcd.ie/soham/news-and-events/news-2025/ai-and-understanding/"><span class="gallery-caption">Interview on AI and understanding, at DeepTech, China</span></a></div><div class="gallery-frame"><button aria-label="Enlarge image: New article published in The Conversation" class="image-open" data-caption="New article published in The Conversation" data-image="gallery-2.jpeg" data-link="https://theconversation.com/ai-could-supercharge-human-collective-intelligence-in-everything-from-disaster-relief-to-medical-research-249437?utm_medium=article_clipboard_share&amp;utm_source=theconversation.com" type="button"><img alt="" loading="lazy" src="gallery-2.jpeg"/><span aria-hidden="true" class="view-label">View image ⤢</span></button><a class="gallery-card gallery-item" href="https://theconversation.com/ai-could-supercharge-human-collective-intelligence-in-everything-from-disaster-relief-to-medical-research-249437?utm_medium=article_clipboard_share&amp;utm_source=theconversation.com"><span class="gallery-caption">New article published in The Conversation</span></a></div><div class="gallery-frame"><button aria-label="Enlarge image: Paper on AI-enhanced collective intelligence reported in MIT Tech Review (Chinese edition)" class="image-open" data-caption="Paper on AI-enhanced collective intelligence reported in MIT Tech Review (Chinese edition)" data-image="gallery-3.png" data-link="https://www.mittrchina.com/news/detail/13292" type="button"><img alt="" loading="lazy" src="gallery-3.png"/><span aria-hidden="true" class="view-label">View image ⤢</span></button><a class="gallery-card gallery-item" href="https://www.mittrchina.com/news/detail/13292"><span class="gallery-caption">Paper on AI-enhanced collective intelligence reported in MIT Tech Review (Chinese edition)</span></a></div><div class="gallery-frame"><button aria-label="Enlarge image: Previous work mentioned in a Dutch newspaper de Volkskrant" class="image-open" data-caption="Previous work mentioned in a Dutch newspaper de Volkskrant" data-image="gallery-4.png" data-link="https://www.volkskrant.nl/kijkverder/v/2022/de-oorlog-volgens-weibo~v492759/" type="button"><img alt="" loading="lazy" src="gallery-4.png"/><span aria-hidden="true" class="view-label">View image ⤢</span></button><a class="gallery-card gallery-item" href="https://www.volkskrant.nl/kijkverder/v/2022/de-oorlog-volgens-weibo~v492759/"><span class="gallery-caption">Previous work mentioned in a Dutch newspaper de Volkskrant</span></a></div></div></section><footer>© Hao Cui <a href="#about">Back to top ↑</a></footer></main></div><dialog aria-label="Gallery image viewer" id="image-viewer"><button aria-label="Close image viewer" class="close-viewer" type="button">×</button><img alt="" id="viewer-image"/><div class="viewer-footer"><p id="viewer-caption"></p><a id="viewer-link">Read more ↗</a></div></dialog><script defer="True" src="interactions.js?v=38"></script><script defer="True" src="network.js?v=29"></script><dialog aria-labelledby="search-title" id="site-search"><div class="search-heading"><h2 id="search-title">Search website</h2><button aria-label="Close search" id="search-close" type="button">×</button></div><label for="search-input">Search publications, talks, teaching and more</label><input autocomplete="off" id="search-input" placeholder="e.g. AI, networks, teaching" type="search"/><p aria-live="polite" id="search-status">Type to search the website.</p><ul id="search-results"></ul></dialog><script defer="True" src="search-data.js?v=40"></script><script defer="True" src="search.js?v=40"></script></body></html>
