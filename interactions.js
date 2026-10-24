@@ -6,6 +6,7 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
     paper.hidden = button.dataset.filter !== 'all' && paper.dataset.topic !== button.dataset.filter;
     if (!paper.hidden) count++;
   });
+  document.querySelectorAll('.pub-group').forEach(group => {group.hidden = !group.querySelector('.publication:not([hidden])');});
   document.querySelector('#result-count').textContent = `${count} publications & outputs`;
 }));
 const viewer = document.querySelector('#image-viewer');
