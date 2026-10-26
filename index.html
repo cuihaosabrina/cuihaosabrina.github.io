@@ -74,7 +74,7 @@
 
   <div class="rm-box rm-root">
     <strong>Collective dynamics in human–machine social systems</strong>
-    <span>How attention, belief, and knowledge emerge when humans and machines interact</span>
+    <span>How attention, belief, and knowledge emerge and evolve when humans and machines interact</span>
   </div>
   <div class="rm-v"></div>
   <div class="rm-box rm-frame">
@@ -86,7 +86,6 @@
   </div>
   <div class="rm-v"></div>
   <div class="rm-toggle" role="group" aria-label="Organise research by"><button type="button" class="rm-tab" data-rm-view="role" aria-pressed="true">By machine role</button><button type="button" class="rm-tab" data-rm-view="setting" aria-pressed="false">By setting</button></div>
-  <div class="rm-axis" aria-hidden="true"><span class="rm-axis-line"></span><span class="rm-axis-text">Increasing machine agency</span><span class="rm-axis-line"></span><span class="rm-axis-head">▸</span></div>
   <div class="rm-cols" id="rm-cols"></div>
   <div class="rm-controls">
     <button type="button" class="rm-btn" data-rm-all="open">Expand all</button>
@@ -117,9 +116,9 @@
   };
   var VIEWS = {
     role: [
-      { title: "Machine as curator", sub: "Collective attention", q: "How do algorithms and platforms decide what crowds pay attention to?", ids: ["covid", "rome", "interv"] },
-      { title: "Machine as participant", sub: "Belief and social evaluation", q: "When AI joins the interaction, how do groups form beliefs and grant authority?", ids: ["tuning", "gender", "anthro", "notes", "work"] },
-      { title: "Machine as author", sub: "Collective knowledge", q: "What changes when a machine writes the knowledge we share?", ids: ["groki"] }
+      { title: "Information curator", sub: "Collective attention", q: "How do algorithms and platforms decide what crowds pay attention to?", ids: ["covid", "rome", "interv"] },
+      { title: "Social actor", sub: "Belief and social evaluation", q: "When AI joins the interaction, how do groups form beliefs and grant authority?", ids: ["tuning", "gender", "anthro", "notes", "work"] },
+      { title: "Knowledge producer", sub: "Collective knowledge", q: "What changes when a machine writes the knowledge we share?", ids: ["groki"] }
     ],
     setting: [
       { title: "Information ecosystems", sub: "Social media, fact-checking, encyclopedias", q: "How do algorithms and AI change which information is seen, checked, and written?", ids: ["covid", "rome", "interv", "notes", "groki"] },
@@ -128,12 +127,10 @@
     ]
   };
   var root = document.getElementById("rm-cols");
-  var axis = document.querySelector("#research-map .rm-axis");
   var esc = function (s) { var e = document.createElement("span"); e.textContent = s; return e.innerHTML; };
 
   function render(view) {
     root.innerHTML = "";
-    axis.style.visibility = view === "role" ? "visible" : "hidden";
     VIEWS[view].forEach(function (s, i) {
       var col = document.createElement("div");
       var listId = "rm-list-" + view + "-" + i;
