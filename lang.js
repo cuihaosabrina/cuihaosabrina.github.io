@@ -202,6 +202,14 @@
   });
   var si = document.getElementById('search-input'); if (si) si.addEventListener('input', searchText);
   var saved = 'en';
-  try { localStorage.removeItem('lang-v1'); saved = sessionStorage.getItem('lang-session-v1') || 'en'; } catch (err) {}
+  var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || {};
+  var fromOwnPage = false;
+  try { fromOwnPage = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (err) {}
+  var keep = (nav.type === 'navigate' || nav.type === 'back_forward') && fromOwnPage;
+  try {
+    localStorage.removeItem('lang-v1');
+    if (keep) saved = sessionStorage.getItem('lang-session-v1') || 'en';
+    else sessionStorage.removeItem('lang-session-v1');
+  } catch (err) {}
   if (saved === 'zh') apply('zh');
 })();
