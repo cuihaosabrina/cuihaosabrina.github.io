@@ -151,6 +151,11 @@
     document.querySelectorAll('#search-results small').forEach(function (e) { if (CATS[e.textContent]) e.textContent = CATS[e.textContent]; });
   }
   function apply(lang) {
+    if (lang === 'zh' && !document.getElementById('zh-quote-font')) {
+      var fl = document.createElement('link'); fl.id = 'zh-quote-font'; fl.rel = 'stylesheet';
+      fl.href = 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap&text=%E2%80%9C%E2%80%9D%E3%80%82%E4%B8%80%E4%B8%8D%E4%BA%8E%E4%BA%BA%E4%BC%9A%E5%83%8F%E5%8D%B1%E5%9C%A8%E5%A7%8B%E5%BC%80%E6%80%9D%E6%9C%BA%E6%A0%B7%E6%AD%A3%E7%9A%84%E7%9C%9F%E7%AE%97%E8%80%83%E8%80%8C%E8%AE%A1%E9%99%A9%EF%BC%8C';
+      document.head.appendChild(fl);
+    }
     window.siteLang = lang;
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
     if (!window.__enTitle) window.__enTitle = document.title;
