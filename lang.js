@@ -35,7 +35,7 @@
 "Selected publications": "代表性论文",
 "See all publications →": "查看全部论文 →",
 "Media &amp; gallery": "媒体与图集",
-"Full gallery ↗": "全部图集 ↗",
+"See full gallery →": "查看全部图集 →",
 "View image ⤢": "查看大图 ⤢",
 "Interview on AI and understanding, at DeepTech, China": "在 DeepTech（中国）接受关于人工智能与理解的采访",
 "New article published in The Conversation": "在 The Conversation 发表新文章",
