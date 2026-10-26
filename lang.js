@@ -46,6 +46,7 @@
 "First Place Winner in Microsoft Policy Hackathon": "微软政策黑客松第一名",
 "© Hao Cui <a href=\"#about\">Back to top ↑</a>": "© 崔浩 <a href=\"#about\">返回顶部 ↑</a>",
 "© Hao Cui": "© 崔浩",
+"Google Scholar ↗": "谷歌学术 ↗",
 "Read more ↗": "阅读更多 ↗",
 "Search website": "搜索网站",
 "Search publications, talks, and more": "搜索论文、报告等内容",
@@ -162,6 +163,8 @@
     });
     document.querySelectorAll('.profile-links a').forEach(function (a) {
       if (/mailto:/.test(a.href)) firstText(a, 'Email', '邮箱', lang);
+      if (/scholar\.google/.test(a.href)) firstText(a, 'Google Scholar', '谷歌学术', lang);
+      if (/linkedin\.com/.test(a.href)) firstText(a, 'LinkedIn', '领英', lang);
     });
     var input = document.getElementById('search-input');
     if (input) input.placeholder = lang === 'zh' ? '例如：AI、网络、注意力' : 'e.g. AI, networks, attention';
