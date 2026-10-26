@@ -12,7 +12,7 @@
     ['#about > h2', '关于我'],
     ['#about > p:nth-of-type(1)', '我是一名计算社会科学研究者，现任<a href="https://peoplefinder.tcd.ie/Profile?Username=CUIH1">都柏林圣三一大学</a>研究员，就职于<a href="https://www.tcd.ie/soham/">人与机器社会学研究中心（SOHAM）</a>。我研究在人与机器互动的社会系统中，集体注意力、信念和知识如何涌现与演化。我的工作主要关注网络信息生态，同时也研究职场中的人工智能以及群体决策。'],
     ['#about > p:nth-of-type(2)', '我的研究追踪机器如何在社会生活中扮演越来越主动的角色。在中欧大学攻读<a href="https://networkdatascience.ceu.edu/">网络科学</a>博士期间，我研究了新浪微博的排序算法和平台干预如何决定哪些话题获得公众关注。博士后阶段，我先后在都柏林大学和圣三一大学工作，开始关注作为社会互动参与者的人工智能。我通过建模研究人工智能体的影响力如何改变群体最终形成的信念，并通过在线实验研究人们如何评价处于权威位置的人工智能。最近，我开始比较人工智能生成的百科与人类撰写的百科，以理解当机器成为共享知识的作者时会发生哪些变化。'],
-    ['#about > p:nth-of-type(3)', '在这些项目中，我综合运用网络科学、基于主体的建模、大规模数字痕迹数据和行为实验。我是发表于 <em>Patterns</em> 的综述 <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a> 的第一作者，我们在文中提出了一个多层框架，用于理解人机互动如何塑造集体智能。我的研究也越来越关注人工智能系统的设计，从影响力的大小到外观，如何影响它们所加入的群体的结果。'],
+    ['#about > p:nth-of-type(3)', '在这些项目中，我综合运用网络科学、基于主体的建模、大规模数字痕迹数据和行为实验。我是发表于 <em>Patterns</em> 的综述 <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a> 的第一作者，我们在文中提出了一个多层框架，用于理解人机互动如何塑造集体智能。我的研究也越来越关注人工智能系统的设计及其在人们眼中的角色，如何塑造社会互动与集体动力学。'],
     ['#about > p:nth-of-type(4)', '我的研究曾被 <a href="https://theconversation.com/ai-could-supercharge-human-collective-intelligence-in-everything-from-disaster-relief-to-medical-research-249437">The Conversation</a>、<a href="https://www.volkskrant.nl/kijkverder/v/2022/de-oorlog-volgens-weibo~v492759/">de Volkskrant</a>、<a href="https://www.mittrchina.com/news/detail/13292">《麻省理工科技评论》中文版</a>和 <a href="' + LSE + '">LSE Impact</a> 报道。'],
     ['#about blockquote p', '“真正的危险不在于计算机会开始像人一样思考，而在于人会开始像计算机一样思考。”'],
     ['#about blockquote cite', '—— 西德尼·J·哈里斯'],
