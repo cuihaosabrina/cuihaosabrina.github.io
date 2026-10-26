@@ -60,7 +60,7 @@ document.querySelectorAll('[data-research]').forEach(node => node.addEventListen
 }));
 
 const themeToggle=document.querySelector('#theme-toggle');
-function themeLabel(){const dark=document.documentElement.dataset.theme==='dark';themeToggle.textContent=dark?'\u2600\uFE0E Light':'☾ Dark';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
+function themeLabel(){const dark=document.documentElement.dataset.theme==='dark';themeToggle.innerHTML=dark?'<span class="tt-glyph">\u2600\uFE0E</span><svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 1.8v3.4M12 18.8v3.4M1.8 12h3.4M18.8 12h3.4M4.8 4.8l2.4 2.4M16.8 16.8l2.4 2.4M4.8 19.2l2.4-2.4M16.8 7.2l2.4-2.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/></svg> Light':'☾ Dark';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
 themeToggle.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('theme-v2',theme);sessionStorage.setItem('theme-session-v1',theme)}catch(e){}themeLabel();});
 themeLabel();
 document.querySelector('#load-x')?.addEventListener('click',()=>{
