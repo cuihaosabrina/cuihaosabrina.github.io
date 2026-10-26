@@ -69,3 +69,4 @@ nav{justify-content:flex-end}nav div{justify-content:flex-end}@media(max-width:7
 :root[data-theme=dark] #media .gallery-item:hover .gallery-caption,:root[data-theme=dark] #media .gallery-item:focus-visible .gallery-caption{color:var(--accent)}
 :root[data-theme=dark] .view-label{color:var(--accent);background:#1c272bf0}
 #publications .pub-group-title{font:500 13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#94602e;margin:30px 0 4px}#publications .pub-group:first-of-type .pub-group-title{margin-top:8px}#publications .pub-group[hidden]{display:none}:root[data-theme=dark] #publications .pub-group-title{color:#d8b47d}
+.dream-return{font-size:18px;line-height:1}
