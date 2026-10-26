@@ -73,3 +73,25 @@ document.querySelector('#load-x')?.addEventListener('click',()=>{
 });
 
 (()=>{const b=document.querySelector('#menu-toggle'),nav=b&&b.closest('nav');if(!b)return;const set=o=>{nav.classList.toggle('nav-open',o);b.setAttribute('aria-expanded',String(o));};b.addEventListener('click',()=>set(!nav.classList.contains('nav-open')));nav.querySelectorAll('#site-links a').forEach(a=>a.addEventListener('click',()=>set(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});document.addEventListener('click',e=>{if(!nav.contains(e.target))set(false)});})();
+
+(function(){
+  var viewer=document.getElementById('image-viewer'); if(!viewer) return;
+  var img=document.getElementById('viewer-image'), cap=document.getElementById('viewer-caption'), link=document.getElementById('viewer-link');
+  function clear(){ var f=viewer.querySelector('.video-frame'); if(f) f.remove(); img.hidden=false; }
+  document.querySelectorAll('.video-open').forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.stopImmediatePropagation();
+      clear(); img.hidden=true;
+      var wrap=document.createElement('div'); wrap.className='video-frame';
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.video+'?autoplay=1&rel=0';
+      f.title=b.dataset.caption; f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
+      f.referrerPolicy='strict-origin-when-cross-origin';
+      wrap.appendChild(f); viewer.insertBefore(wrap, viewer.querySelector('.viewer-footer'));
+      cap.textContent=b.dataset.caption; link.href=b.dataset.link;
+      link.textContent=document.documentElement.lang==='zh-CN'?'在 YouTube 上观看 ↗':'Watch on YouTube ↗';
+      viewer.showModal();
+    },true);
+  });
+  viewer.addEventListener('close',function(){ clear(); var zh=document.documentElement.lang==='zh-CN'; link.textContent=zh?'阅读更多 ↗':'Read more ↗'; });
+})();
