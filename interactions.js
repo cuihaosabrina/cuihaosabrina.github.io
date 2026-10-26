@@ -60,7 +60,7 @@ document.querySelectorAll('[data-research]').forEach(node => node.addEventListen
 }));
 
 const themeToggle=document.querySelector('#theme-toggle');
-function themeLabel(){const dark=document.documentElement.dataset.theme==='dark';themeToggle.innerHTML=dark?'<span class="tt-glyph">☀</span><svg class="tt-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><g stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg> Light':'<span class="tt-glyph">☾</span><svg class="tt-svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a.6.6 0 0 0-.8-.7A9.9 9.9 0 1 0 21.2 15.4a.6.6 0 0 0-.7-.8z"/></svg> Dark';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
+function themeLabel(){const dark=document.documentElement.dataset.theme==='dark';themeToggle.textContent=dark?'\u2600\uFE0E Light':'☾ Dark';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
 themeToggle.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('theme-v2',theme);sessionStorage.setItem('theme-session-v1',theme)}catch(e){}themeLabel();});
 themeLabel();
 document.querySelector('#load-x')?.addEventListener('click',()=>{
