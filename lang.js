@@ -2,6 +2,7 @@
   var LSE = 'https://blogs.lse.ac.uk/impactofsocialsciences/2026/06/12/gendered-ai-design-reflects-and-reinforces-societys-biases/';
   var STATIC = [
     ['nav div a[href="#about"], nav div a[href="index.html#about"]', '首页'],
+    ['#menu-toggle .menu-label', '菜单'],
     ['nav div a[href="publications.html"]', '论文'],
     ['nav div a[href="talks.html"]', '报告'],
     ['nav div a[href="gallery.html"]', '图集'],

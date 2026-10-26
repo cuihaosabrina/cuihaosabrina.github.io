@@ -71,3 +71,5 @@ document.querySelector('#load-x')?.addEventListener('click',()=>{
  script.onerror=()=>{button.disabled=false;button.textContent='Retry loading posts';document.querySelector('#x-status').textContent='X could not be loaded. The original post links are available above.';script.remove();};
  document.body.append(script);
 });
+
+(()=>{const b=document.querySelector('#menu-toggle'),nav=b&&b.closest('nav');if(!b)return;const set=o=>{nav.classList.toggle('nav-open',o);b.setAttribute('aria-expanded',String(o));};b.addEventListener('click',()=>set(!nav.classList.contains('nav-open')));nav.querySelectorAll('#site-links a').forEach(a=>a.addEventListener('click',()=>set(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});document.addEventListener('click',e=>{if(!nav.contains(e.target))set(false)});})();
