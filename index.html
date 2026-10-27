@@ -99,7 +99,7 @@
   --hf-box:#111619; --hf-box-stroke:#476166;
   --hf-hum-fill:#085041; --hf-hum-stroke:#5DCAA5; --hf-ai-fill:#3C3489; --hf-ai-stroke:#AFA9EC;
   --hf-purple:#AFA9EC; --hf-teal:#5DCAA5; }
-#research-map .hf svg { display:block; width:100%; max-width:820px; height:auto; margin:0 auto; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+#research-map .hf svg { display:block; width:100%; max-width:600px; height:auto; margin:0 auto; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
 #research-map .hf .t { font: 15px Georgia,"Times New Roman",serif; fill:var(--hf-p); }
 #research-map .hf .s { font-size:12px; fill:var(--hf-s); }
 #research-map .hf .key { font-weight:600; fill:var(--hf-p); }
@@ -125,11 +125,17 @@
 #research-map .hf .shi { fill:var(--hf-hi-sub); }
 #research-map .hf a text { cursor:pointer; }
 #research-map .hf a:hover text, #research-map .hf a:focus text { text-decoration:underline; }
-#research-map .hf, #research-map .hf-scroll { max-width:100%; min-width:0; }
-#research-map .hf-scroll { width:100%; contain:inline-size; overflow-x:auto; -webkit-overflow-scrolling:touch; }
-#research-map .hf-hint { display:none; font-size:12px; color:var(--rm-muted); text-align:center; margin:6px 0 0; }
-#research-map .hf .hf-mob { display:none; }
-@media (max-width: 680px) { #research-map .hf .hf-desk { display:none; } #research-map .hf .hf-mob { display:block; max-width:440px; } }
+#research-map .hf { max-width:100%; min-width:0; }
+#research-map .hf-zoom { all:unset; box-sizing:border-box; display:block; position:relative; width:100%; max-width:600px; margin:0 auto; cursor:zoom-in; border-radius:10px; }
+#research-map .hf-zoom:focus-visible { outline:2px solid var(--rm-accent); outline-offset:4px; }
+#research-map .hf-zoom-label { position:absolute; right:6px; bottom:6px; font-size:12px; background:#173f48e8; color:#fff; padding:4px 9px; border-radius:3px; opacity:0; transition:opacity .2s; }
+#research-map .hf-zoom:hover .hf-zoom-label, #research-map .hf-zoom:focus-visible .hf-zoom-label { opacity:1; }
+@media (hover: none) { #research-map .hf-zoom-label { position:static; display:block; opacity:1; background:none; color:var(--rm-muted); text-align:center; padding:6px 0 0; } }
+#hf-dialog { width:min(1120px,96vw); max-width:none; padding:46px 18px 14px; }
+#hf-dialog .hf-dlg-body { overflow:auto; -webkit-overflow-scrolling:touch; max-height:calc(90vh - 90px); }
+#hf-dialog .hf-dlg-body img { display:block; width:auto; max-width:100%; height:auto; max-height:calc(90vh - 100px); margin:0 auto; border-radius:6px; }
+#hf-dialog .hf-dlg-note { display:none; font-size:12px; color:#66777a; margin:8px 0 0; text-align:center; }
+@media (max-width: 680px) { #hf-dialog .hf-dlg-note { display:block; } #hf-dialog { width:100vw; max-height:100dvh; height:100dvh; margin:0; padding:48px 0 10px; border-radius:0; } #hf-dialog .hf-dlg-body { max-height:calc(100dvh - 90px); } #hf-dialog .hf-dlg-body img { width:700px; max-width:none; max-height:none; } }
 #research-map .hf-details { margin-top:10px; }
 #research-map .hf-details > summary { list-style:none; display:inline-flex; align-items:center; gap:6px; }
 #research-map .hf-details > summary::-webkit-details-marker { display:none; }
@@ -143,7 +149,7 @@
     <details class="hf-details">
       <summary class="rm-btn"><span class="hf-closed">View framework figure</span><span class="hf-open">Hide framework figure</span> <span class="rm-chev" aria-hidden="true">▾</span></summary>
     <figure class="hf" style="margin:12px 0 0">
-<div class="hf-scroll" tabindex="0" aria-label="Framework figure, scroll sideways on small screens">
+<button type="button" class="hf-zoom" aria-label="Enlarge framework figure" aria-haspopup="dialog">
 <svg class="hf-desk" viewBox="0 0 680 578" role="img" aria-labelledby="hf-title hf-desc">
 <title id="hf-title">From interaction architecture to social mechanisms</title>
 <desc id="hf-desc">Two papers approach hybrid intelligence from complementary directions. Left, AI-enhanced collective intelligence (Cui &amp; Yasseri, 2024) proposes a multilayer representation of humans and AI agents across cognition, physical, and information layers. Right, Behavioural sociology of humans and machines (Yasseri, Cui, &amp; Mutzner, 2026) traces social mechanisms across individuals, hybrid groups, and organisations. AI social cues link the AI agent to individual-level perception. Both feed into hybrid intelligence, the emergence and conditions of human–AI complementarity.</desc>
@@ -156,11 +162,9 @@
 <path class="ln-g" d="M150 66 L150 44 L530 44 L530 64" stroke-width="1" marker-end="url(#hf-ag)"/>
 
 <rect class="pan-l" x="30" y="70" width="240" height="348" rx="16" stroke-width="0.5"/>
-<a href="https://doi.org/10.1016/j.patter.2024.101074">
 <text class="t tl" x="150" y="88" text-anchor="middle" dy=".35em">AI-enhanced</text>
 <text class="t tl" x="150" y="107" text-anchor="middle" dy=".35em">collective intelligence</text>
 <text class="s" x="150" y="132" text-anchor="middle" dy=".35em" font-style="italic">Cui &amp; Yasseri, 2024</text>
-</a>
 <polygon class="layer" points="68,153 248,153 228,193 48,193" stroke-width="0.5"/>
 <polygon class="layer" points="68,218 248,218 228,258 48,258" stroke-width="0.5"/>
 <polygon class="layer" points="68,283 248,283 228,323 48,323" stroke-width="0.5"/>
@@ -193,11 +197,9 @@
 <text class="s" x="158" y="390" dy=".35em">AI agent</text>
 
 <rect class="pan-r" x="410" y="70" width="240" height="348" rx="16" stroke-width="0.5"/>
-<a href="https://arxiv.org/abs/2610.17487">
 <text class="t tr" x="530" y="88" text-anchor="middle" dy=".35em">Behavioural sociology of</text>
 <text class="t tr" x="530" y="107" text-anchor="middle" dy=".35em">humans and machines</text>
 <text class="s sr" x="530" y="132" text-anchor="middle" dy=".35em" font-style="italic">Yasseri, Cui, &amp; Mutzner, 2026</text>
-</a>
 <rect class="box" x="426" y="148" width="200" height="66" rx="8" stroke-width="0.5"/>
 <rect class="box" x="426" y="226" width="200" height="66" rx="8" stroke-width="0.5"/>
 <rect class="box-hl" x="426" y="304" width="200" height="66" rx="8" stroke-width="1"/>
@@ -230,99 +232,24 @@
 <text class="s shi" x="340" y="518" text-anchor="middle" dy=".35em">Emergence and conditions of human–AI complementarity</text>
 <text class="s shi" x="340" y="536" text-anchor="middle" dy=".35em">roles · incentives · reliance · accountability</text>
 </svg>
-<svg class="hf-mob" viewBox="0 0 362 822" role="img" aria-labelledby="hfm-title hfm-desc">
-<title id="hfm-title">From interaction architecture to social mechanisms</title>
-<desc id="hfm-desc">Stacked version of the framework figure. Top, AI-enhanced collective intelligence (Cui &amp; Yasseri, 2024) proposes a multilayer representation of humans and AI agents across cognition, physical, and information layers. Below, Behavioural sociology of humans and machines (Yasseri, Cui, &amp; Mutzner, 2026) traces social mechanisms from individuals to hybrid groups to organisations, with feedback. AI social cues link the AI agent to the individuals level. Both lead to hybrid intelligence, the emergence and conditions of human–AI complementarity.</desc>
-<defs>
-<marker id="hfm-ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk-g" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-<marker id="hfm-ap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk-p" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-<marker id="hfm-at" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk-t" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-</defs>
-<text class="s" x="187" y="18" text-anchor="middle" dy=".35em">From <tspan class="key">interaction architecture</tspan> to <tspan class="key">social mechanisms</tspan></text>
-
-<rect class="pan-l" x="24" y="36" width="326" height="249" rx="14" stroke-width="0.5"/>
-<a href="https://doi.org/10.1016/j.patter.2024.101074">
-<text class="t tl" x="187" y="56" text-anchor="middle" dy=".35em">AI-enhanced</text>
-<text class="t tl" x="187" y="75" text-anchor="middle" dy=".35em">collective intelligence</text>
-<text class="s" x="187" y="98" text-anchor="middle" dy=".35em" font-style="italic">Cui &amp; Yasseri, 2024</text>
-</a>
-<polygon class="layer" points="64,117 314,117 294,153 44,153" stroke-width="0.5"/>
-<polygon class="layer" points="64,167 314,167 294,203 44,203" stroke-width="0.5"/>
-<polygon class="layer" points="64,217 314,217 294,253 44,253" stroke-width="0.5"/>
-<text class="s" x="62" y="135" dy=".35em">Cognition</text>
-<text class="s" x="62" y="185" dy=".35em">Physical</text>
-<text class="s" x="62" y="235" dy=".35em">Information</text>
-<g class="ln-f" stroke-width="0.5" stroke-dasharray="3 3">
-<line x1="200" y1="142" x2="200" y2="178"/><line x1="200" y1="192" x2="200" y2="228"/>
-<line x1="235" y1="142" x2="235" y2="178"/><line x1="235" y1="192" x2="235" y2="228"/>
-<line x1="268" y1="142" x2="268" y2="178"/><line x1="268" y1="192" x2="268" y2="228"/>
-</g>
-<g class="ln-g" stroke-width="1">
-<line x1="207" y1="135" x2="221" y2="135"/><line x1="249" y1="135" x2="261" y2="135"/>
-<line x1="207" y1="185" x2="221" y2="185"/><line x1="249" y1="235" x2="261" y2="235"/>
-</g>
-<g class="hum" stroke-width="0.5">
-<circle cx="200" cy="135" r="7"/><circle cx="268" cy="135" r="7"/>
-<circle cx="200" cy="185" r="7"/><circle cx="268" cy="185" r="7"/>
-<circle cx="200" cy="235" r="7"/><circle cx="268" cy="235" r="7"/>
-<circle cx="48" cy="270" r="5"/>
-</g>
-<g class="ai" stroke-width="0.5">
-<rect x="228" y="128" width="14" height="14" rx="2"/>
-<rect x="228" y="178" width="14" height="14" rx="2"/>
-<rect x="228" y="228" width="14" height="14" rx="2"/>
-<rect x="114" y="265" width="10" height="10" rx="2"/>
-</g>
-<rect class="ln-p" x="221" y="121" width="28" height="128" rx="8" stroke-width="1.2"/>
-<text class="s" x="60" y="270" dy=".35em">Human</text>
-<text class="s" x="132" y="270" dy=".35em">AI agent</text>
-
-<line class="ln-g" x1="187" y1="288" x2="187" y2="316" stroke-width="1.5" marker-end="url(#hfm-ag)"/>
-<text class="s" x="334" y="302" text-anchor="end" dy=".35em">AI social cues</text>
-
-<rect class="pan-r" x="24" y="320" width="326" height="336" rx="14" stroke-width="0.5"/>
-<a href="https://arxiv.org/abs/2610.17487">
-<text class="t tr" x="187" y="340" text-anchor="middle" dy=".35em">Behavioural sociology of</text>
-<text class="t tr" x="187" y="359" text-anchor="middle" dy=".35em">humans and machines</text>
-<text class="s sr" x="187" y="382" text-anchor="middle" dy=".35em" font-style="italic">Yasseri, Cui, &amp; Mutzner, 2026</text>
-</a>
-<rect class="box-hl" x="48" y="398" width="270" height="64" rx="8" stroke-width="1"/>
-<rect class="box" x="48" y="476" width="270" height="64" rx="8" stroke-width="0.5"/>
-<rect class="box" x="48" y="554" width="270" height="64" rx="8" stroke-width="0.5"/>
-<text class="t" x="183" y="415" text-anchor="middle" dy=".35em">Individuals</text>
-<text class="s" x="183" y="435" text-anchor="middle" dy=".35em">Anthropomorphism,</text>
-<text class="s" x="183" y="450" text-anchor="middle" dy=".35em">social categorisation, bias</text>
-<text class="t" x="183" y="493" text-anchor="middle" dy=".35em">Hybrid groups</text>
-<text class="s" x="183" y="513" text-anchor="middle" dy=".35em">Asymmetric reciprocity,</text>
-<text class="s" x="183" y="528" text-anchor="middle" dy=".35em">collective intelligence</text>
-<text class="t" x="183" y="571" text-anchor="middle" dy=".35em">Organisations</text>
-<text class="s" x="183" y="591" text-anchor="middle" dy=".35em">Trust, legitimacy,</text>
-<text class="s" x="183" y="606" text-anchor="middle" dy=".35em">delegated authority, norms</text>
-<line class="ln-g" x1="183" y1="464" x2="183" y2="473" stroke-width="1.5" marker-end="url(#hfm-ag)"/>
-<line class="ln-g" x1="183" y1="542" x2="183" y2="551" stroke-width="1.5" marker-end="url(#hfm-ag)"/>
-<path class="ln-g" d="M46 586 L36 586 L36 430 L44 430" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#hfm-ag)"/>
-<text class="s" x="187" y="638" text-anchor="middle" dy=".35em">Feedback shapes later interaction</text>
-<path class="ln-p" d="M235 249 L235 262 L342 262 L342 430 L322 430" stroke-width="1.5" marker-end="url(#hfm-ap)"/>
-
-<path class="ln-g" d="M40 287 L40 296 L12 296 L12 758 L20 758" stroke-width="1.5" marker-end="url(#hfm-ag)"/>
-<text class="s" x="22" y="676" dy=".35em">Diversity and</text>
-<text class="s" x="22" y="692" dy=".35em">structure</text>
-<line class="ln-p" x1="200" y1="658" x2="200" y2="712" stroke-width="1.5" marker-end="url(#hfm-ap)"/>
-<text class="s" x="192" y="676" text-anchor="end" dy=".35em">Explains</text>
-<text class="s" x="192" y="692" text-anchor="end" dy=".35em">when it works</text>
-<line class="ln-t" x1="260" y1="714" x2="260" y2="660" stroke-width="1.5" marker-end="url(#hfm-at)"/>
-<text class="s" x="268" y="676" dy=".35em">Reshapes</text>
-<text class="s" x="268" y="692" dy=".35em">mechanisms</text>
-
-<rect class="pan-hi" x="24" y="716" width="326" height="90" rx="10" stroke-width="0.5"/>
-<text class="t thi" x="187" y="736" text-anchor="middle" dy=".35em">Hybrid intelligence</text>
-<text class="s shi" x="187" y="757" text-anchor="middle" dy=".35em">Emergence and conditions of</text>
-<text class="s shi" x="187" y="773" text-anchor="middle" dy=".35em">human–AI complementarity</text>
-<text class="s shi" x="187" y="792" text-anchor="middle" dy=".35em">roles · incentives · reliance · accountability</text>
-</svg>
-</div>
+<span class="hf-zoom-label" aria-hidden="true">View image ⤢</span>
+</button>
       <figcaption class="hf-cap">Two of my papers approach hybrid intelligence from complementary directions. <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a> (<em>Patterns</em>, 2024) proposes a multilayer representation of human–AI collective intelligence, with cognition, physical, and information layers, and examines how diversity and network structure shape collective outcomes. <a href="https://arxiv.org/abs/2610.17487">Behavioural sociology of humans and machines</a> (Springer Handbook of Hybrid Intelligence, accepted) turns to the social mechanisms operating within such systems, tracing how people categorise AI, how reciprocity and authority change when machines participate, and how these patterns become embedded in organisations.</figcaption>
     </figure>
+    <dialog id="hf-dialog" aria-label="Framework figure, enlarged">
+      <button type="button" class="close-viewer" aria-label="Close enlarged figure">×</button>
+      <div class="hf-dlg-body"><img src="framework.svg" alt="Framework figure linking AI-enhanced collective intelligence and behavioural sociology of humans and machines to hybrid intelligence" loading="lazy"/></div>
+      <p class="hf-dlg-note">Drag or pinch to explore the figure</p>
+    </dialog>
+    <script>
+    (function () {
+      var d = document.getElementById("hf-dialog"), btn = document.querySelector("#research-map .hf-zoom");
+      if (!d || !btn || !d.showModal) return;
+      btn.addEventListener("click", function () { d.showModal(); });
+      d.querySelector(".close-viewer").addEventListener("click", function () { d.close(); btn.focus(); });
+      d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+    })();
+    </script>
     </details>
   </div>
   <div class="rm-v"></div>
