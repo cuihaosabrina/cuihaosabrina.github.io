@@ -83,6 +83,157 @@
       <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a> <span style="color:var(--rm-muted)">(Patterns, 2024)</span>
       &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2610.17487">Behavioural sociology of humans and machines</a> <span style="color:var(--rm-muted)">(Springer Handbook of Hybrid Intelligence, accepted)</span>
     </div>
+<style>
+#research-map .hf { --hf-p:#2C2C2A; --hf-s:#5F5E5A; --hf-line:#5F5E5A; --hf-faint:#888780;
+  --hf-l-fill:#F1EFE8; --hf-l-stroke:#888780; --hf-l-title:#444441;
+  --hf-r-fill:#EEEDFE; --hf-r-stroke:#534AB7; --hf-r-title:#3C3489; --hf-r-sub:#534AB7;
+  --hf-hi-fill:#E1F5EE; --hf-hi-stroke:#0F6E56; --hf-hi-title:#085041; --hf-hi-sub:#0F6E56;
+  --hf-box:#FFFFFF; --hf-box-stroke:#B4B2A9;
+  --hf-hum-fill:#9FE1CB; --hf-hum-stroke:#0F6E56; --hf-ai-fill:#CECBF6; --hf-ai-stroke:#534AB7;
+  --hf-purple:#7F77DD; --hf-teal:#1D9E75;
+  margin: 10px 0 4px; }
+:root[data-theme="dark"] #research-map .hf { --hf-p:#d9e1e2; --hf-s:#aabbbf; --hf-line:#8fa3a6; --hf-faint:#6f8285;
+  --hf-l-fill:#1c272b; --hf-l-stroke:#476166; --hf-l-title:#d9e1e2;
+  --hf-r-fill:#1f1d34; --hf-r-stroke:#7F77DD; --hf-r-title:#CECBF6; --hf-r-sub:#AFA9EC;
+  --hf-hi-fill:#0e2a26; --hf-hi-stroke:#1D9E75; --hf-hi-title:#9FE1CB; --hf-hi-sub:#5DCAA5;
+  --hf-box:#111619; --hf-box-stroke:#476166;
+  --hf-hum-fill:#085041; --hf-hum-stroke:#5DCAA5; --hf-ai-fill:#3C3489; --hf-ai-stroke:#AFA9EC;
+  --hf-purple:#AFA9EC; --hf-teal:#5DCAA5; }
+#research-map .hf svg { display:block; width:100%; max-width:820px; height:auto; margin:0 auto; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+#research-map .hf .t { font: 15px Georgia,"Times New Roman",serif; fill:var(--hf-p); }
+#research-map .hf .s { font-size:12px; fill:var(--hf-s); }
+#research-map .hf .key { font-weight:600; fill:var(--hf-p); }
+#research-map .hf .ln-g { stroke:var(--hf-line); fill:none; }
+#research-map .hf .ln-f { stroke:var(--hf-faint); fill:none; }
+#research-map .hf .ln-p { stroke:var(--hf-purple); fill:none; }
+#research-map .hf .ln-t { stroke:var(--hf-teal); fill:none; }
+#research-map .hf .mk-g { stroke:var(--hf-line); }
+#research-map .hf .mk-p { stroke:var(--hf-purple); }
+#research-map .hf .mk-t { stroke:var(--hf-teal); }
+#research-map .hf .pan-l { fill:var(--hf-l-fill); stroke:var(--hf-l-stroke); }
+#research-map .hf .pan-r { fill:var(--hf-r-fill); stroke:var(--hf-r-stroke); }
+#research-map .hf .pan-hi { fill:var(--hf-hi-fill); stroke:var(--hf-hi-stroke); }
+#research-map .hf .layer { fill:var(--hf-faint); fill-opacity:.1; stroke:var(--hf-faint); }
+#research-map .hf .box { fill:var(--hf-box); stroke:var(--hf-box-stroke); }
+#research-map .hf .box-hl { fill:var(--hf-box); stroke:var(--hf-purple); }
+#research-map .hf .hum { fill:var(--hf-hum-fill); stroke:var(--hf-hum-stroke); }
+#research-map .hf .ai { fill:var(--hf-ai-fill); stroke:var(--hf-ai-stroke); }
+#research-map .hf .tl { fill:var(--hf-l-title); }
+#research-map .hf .tr { fill:var(--hf-r-title); }
+#research-map .hf .sr { fill:var(--hf-r-sub); }
+#research-map .hf .thi { fill:var(--hf-hi-title); }
+#research-map .hf .shi { fill:var(--hf-hi-sub); }
+#research-map .hf a text { cursor:pointer; }
+#research-map .hf a:hover text, #research-map .hf a:focus text { text-decoration:underline; }
+#research-map .hf, #research-map .hf-scroll { max-width:100%; min-width:0; }
+#research-map .hf-scroll { width:100%; contain:inline-size; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+#research-map .hf-hint { display:none; font-size:12px; color:var(--rm-muted); text-align:center; margin:6px 0 0; }
+@media (max-width: 680px) { #research-map .hf svg { min-width:600px; } #research-map .hf-hint { display:block; } }
+#research-map .hf-details { margin-top:10px; }
+#research-map .hf-details > summary { list-style:none; display:inline-flex; align-items:center; gap:6px; }
+#research-map .hf-details > summary::-webkit-details-marker { display:none; }
+#research-map .hf-details > summary .rm-chev { font-size:11px; }
+#research-map .hf-details[open] > summary .rm-chev { transform:rotate(180deg); }
+#research-map .hf-details .hf-open { display:none; }
+#research-map .hf-details[open] .hf-open { display:inline; }
+#research-map .hf-details[open] .hf-closed { display:none; }
+#research-map .hf-cap { font-size:13px; color:var(--rm-muted); max-width:820px; margin:10px auto 0; line-height:1.6; }
+</style>
+    <details class="hf-details">
+      <summary class="rm-btn"><span class="hf-closed">View framework figure</span><span class="hf-open">Hide framework figure</span> <span class="rm-chev" aria-hidden="true">▾</span></summary>
+    <figure class="hf" style="margin:12px 0 0">
+<div class="hf-scroll" tabindex="0" aria-label="Framework figure, scroll sideways on small screens">
+<svg viewBox="0 0 680 578" role="img" aria-labelledby="hf-title hf-desc">
+<title id="hf-title">From interaction architecture to social mechanisms</title>
+<desc id="hf-desc">Two papers approach hybrid intelligence from complementary directions. Left, AI-enhanced collective intelligence (Cui &amp; Yasseri, 2024) proposes a multilayer representation of humans and AI agents across cognition, physical, and information layers. Right, Behavioural sociology of humans and machines (Yasseri, Cui, &amp; Mutzner, 2026) traces social mechanisms across individuals, hybrid groups, and organisations. AI social cues link the AI agent to individual-level perception. Both feed into hybrid intelligence, the emergence and conditions of human–AI complementarity.</desc>
+<defs>
+<marker id="hf-ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk-g" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="hf-ap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk-p" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="hf-at" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="mk-t" d="M2 1L8 5L2 9" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text class="s" x="340" y="26" text-anchor="middle" dominant-baseline="central">From <tspan class="key">interaction architecture</tspan> to <tspan class="key">social mechanisms</tspan></text>
+<path class="ln-g" d="M150 66 L150 44 L530 44 L530 64" stroke-width="1" marker-end="url(#hf-ag)"/>
+
+<rect class="pan-l" x="30" y="70" width="240" height="348" rx="16" stroke-width="0.5"/>
+<a href="https://doi.org/10.1016/j.patter.2024.101074">
+<text class="t tl" x="150" y="88" text-anchor="middle" dominant-baseline="central">AI-enhanced</text>
+<text class="t tl" x="150" y="107" text-anchor="middle" dominant-baseline="central">collective intelligence</text>
+<text class="s" x="150" y="132" text-anchor="middle" dominant-baseline="central" font-style="italic">Cui &amp; Yasseri, 2024</text>
+</a>
+<polygon class="layer" points="68,153 248,153 228,193 48,193" stroke-width="0.5"/>
+<polygon class="layer" points="68,218 248,218 228,258 48,258" stroke-width="0.5"/>
+<polygon class="layer" points="68,283 248,283 228,323 48,323" stroke-width="0.5"/>
+<text class="s" x="64" y="173" dominant-baseline="central">Cognition</text>
+<text class="s" x="64" y="238" dominant-baseline="central">Physical</text>
+<text class="s" x="64" y="303" dominant-baseline="central">Information</text>
+<g class="ln-f" stroke-width="0.5" stroke-dasharray="3 3">
+<line x1="150" y1="180" x2="150" y2="231"/><line x1="150" y1="245" x2="150" y2="296"/>
+<line x1="185" y1="180" x2="185" y2="231"/><line x1="185" y1="245" x2="185" y2="296"/>
+<line x1="218" y1="180" x2="218" y2="231"/><line x1="218" y1="245" x2="218" y2="296"/>
+</g>
+<g class="ln-g" stroke-width="1">
+<line x1="157" y1="173" x2="170" y2="173"/><line x1="200" y1="173" x2="211" y2="173"/>
+<line x1="157" y1="238" x2="170" y2="238"/><line x1="200" y1="303" x2="211" y2="303"/>
+</g>
+<g class="hum" stroke-width="0.5">
+<circle cx="150" cy="173" r="7"/><circle cx="218" cy="173" r="7"/>
+<circle cx="150" cy="238" r="7"/><circle cx="218" cy="238" r="7"/>
+<circle cx="150" cy="303" r="7"/><circle cx="218" cy="303" r="7"/>
+<circle cx="72" cy="390" r="5"/>
+</g>
+<g class="ai" stroke-width="0.5">
+<rect x="178" y="166" width="14" height="14" rx="2"/>
+<rect x="178" y="231" width="14" height="14" rx="2"/>
+<rect x="178" y="296" width="14" height="14" rx="2"/>
+<rect x="140" y="385" width="10" height="10" rx="2"/>
+</g>
+<rect class="ln-p" x="171" y="159" width="28" height="158" rx="8" stroke-width="1.2"/>
+<text class="s" x="84" y="390" dominant-baseline="central">Human</text>
+<text class="s" x="158" y="390" dominant-baseline="central">AI agent</text>
+
+<rect class="pan-r" x="410" y="70" width="240" height="348" rx="16" stroke-width="0.5"/>
+<a href="https://arxiv.org/abs/2610.17487">
+<text class="t tr" x="530" y="88" text-anchor="middle" dominant-baseline="central">Behavioural sociology of</text>
+<text class="t tr" x="530" y="107" text-anchor="middle" dominant-baseline="central">humans and machines</text>
+<text class="s sr" x="530" y="132" text-anchor="middle" dominant-baseline="central" font-style="italic">Yasseri, Cui, &amp; Mutzner, 2026</text>
+</a>
+<rect class="box" x="426" y="148" width="200" height="66" rx="8" stroke-width="0.5"/>
+<rect class="box" x="426" y="226" width="200" height="66" rx="8" stroke-width="0.5"/>
+<rect class="box-hl" x="426" y="304" width="200" height="66" rx="8" stroke-width="1"/>
+<text class="t" x="526" y="164" text-anchor="middle" dominant-baseline="central">Organisations</text>
+<text class="s" x="526" y="184" text-anchor="middle" dominant-baseline="central">Trust, legitimacy,</text>
+<text class="s" x="526" y="200" text-anchor="middle" dominant-baseline="central">delegated authority, norms</text>
+<text class="t" x="526" y="242" text-anchor="middle" dominant-baseline="central">Hybrid groups</text>
+<text class="s" x="526" y="262" text-anchor="middle" dominant-baseline="central">Asymmetric reciprocity,</text>
+<text class="s" x="526" y="278" text-anchor="middle" dominant-baseline="central">collective intelligence</text>
+<text class="t" x="526" y="320" text-anchor="middle" dominant-baseline="central">Individuals</text>
+<text class="s" x="526" y="340" text-anchor="middle" dominant-baseline="central">Anthropomorphism,</text>
+<text class="s" x="526" y="356" text-anchor="middle" dominant-baseline="central">social categorisation, bias</text>
+<line class="ln-g" x1="526" y1="302" x2="526" y2="295" stroke-width="1.5" marker-end="url(#hf-ag)"/>
+<line class="ln-g" x1="526" y1="224" x2="526" y2="217" stroke-width="1.5" marker-end="url(#hf-ag)"/>
+<path class="ln-g" d="M628 181 L640 181 L640 337 L631 337" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#hf-ag)"/>
+<text class="s" x="526" y="396" text-anchor="middle" dominant-baseline="central">Feedback shapes later interaction</text>
+
+<path class="ln-p" d="M185 317 L185 337 L422 337" stroke-width="1.5" marker-end="url(#hf-ap)"/>
+<text class="s" x="340" y="323" text-anchor="middle" dominant-baseline="central">AI social cues</text>
+
+<line class="ln-g" x1="150" y1="420" x2="150" y2="474" stroke-width="1.5" marker-end="url(#hf-ag)"/>
+<text class="s" x="160" y="448" dominant-baseline="central">Diversity and structure</text>
+<line class="ln-p" x1="470" y1="420" x2="470" y2="474" stroke-width="1.5" marker-end="url(#hf-ap)"/>
+<text class="s" x="462" y="448" text-anchor="end" dominant-baseline="central">Explains when it works</text>
+<line class="ln-t" x1="520" y1="476" x2="520" y2="422" stroke-width="1.5" marker-end="url(#hf-at)"/>
+<text class="s" x="530" y="448" dominant-baseline="central">Reshapes mechanisms</text>
+
+<rect class="pan-hi" x="30" y="478" width="620" height="76" rx="10" stroke-width="0.5"/>
+<text class="t thi" x="340" y="497" text-anchor="middle" dominant-baseline="central">Hybrid intelligence</text>
+<text class="s shi" x="340" y="518" text-anchor="middle" dominant-baseline="central">Emergence and conditions of human–AI complementarity</text>
+<text class="s shi" x="340" y="536" text-anchor="middle" dominant-baseline="central">roles · incentives · reliance · accountability</text>
+</svg>
+</div>
+      <p class="hf-hint">Swipe sideways to see the full figure</p>
+      <figcaption class="hf-cap">Two of my papers approach hybrid intelligence from complementary directions. <a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a> (<em>Patterns</em>, 2024) proposes a multilayer representation of human–AI collective intelligence, with cognition, physical, and information layers, and examines how diversity and network structure shape collective outcomes. <a href="https://arxiv.org/abs/2610.17487">Behavioural sociology of humans and machines</a> (Springer Handbook of Hybrid Intelligence, accepted) turns to the social mechanisms operating within such systems, tracing how people categorise AI, how reciprocity and authority change when machines participate, and how these patterns become embedded in organisations.</figcaption>
+    </figure>
+    </details>
   </div>
   <div class="rm-v"></div>
   <div class="rm-toggle" role="group" aria-label="Organise research by"><button type="button" class="rm-tab" data-rm-view="role" aria-pressed="true">By machine role</button><button type="button" class="rm-tab" data-rm-view="setting" aria-pressed="false">By theme</button></div>
