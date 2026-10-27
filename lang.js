@@ -20,7 +20,7 @@
     ['#rm-heading', '研究'],
     ['#research-map .rm-lede', '可以在“研究主题”和“机器角色”两种视角之间切换。点击各列查看相关项目，点击项目了解具体内容。'],
     ['#research-map .rm-root strong', '人机社会系统中的集体动力学'],
-    ['#research-map .rm-root span', '人与机器互动时，注意力、信念和知识如何涌现与演化'],
+    ['#research-map .rm-root span', '随着算法和人工智能进入社会生活，注意力、信念和知识如何涌现与演化'],
     ['#research-map .rm-frame .rm-label', '理论框架'],
     ['#research-map .rm-frame .rm-label + div', '<a href="https://doi.org/10.1016/j.patter.2024.101074">AI-enhanced collective intelligence</a> <span style="color:var(--rm-muted)">（Patterns，2024）</span> &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2610.17487">Behavioural sociology of humans and machines</a> <span style="color:var(--rm-muted)">（Springer Handbook of Hybrid Intelligence，已接收）</span>'],
     ['#research-map [data-rm-view="role"]', '按机器角色'],
