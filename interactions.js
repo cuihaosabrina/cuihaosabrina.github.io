@@ -77,11 +77,11 @@ document.querySelector('#load-x')?.addEventListener('click',()=>{
 (function(){
   var viewer=document.getElementById('image-viewer'); if(!viewer) return;
   var img=document.getElementById('viewer-image'), cap=document.getElementById('viewer-caption'), link=document.getElementById('viewer-link');
-  function clear(){ var f=viewer.querySelector('.video-frame'); if(f) f.remove(); img.hidden=false; }
+  function clear(){ var f=viewer.querySelector('.video-frame'); if(f) f.remove(); img.hidden=false; img.style.display=''; }
   document.querySelectorAll('.video-open').forEach(function(b){
     b.addEventListener('click',function(e){
       e.stopImmediatePropagation();
-      clear(); img.hidden=true;
+      clear(); img.hidden=true; img.style.display='none'; img.removeAttribute('src');
       var wrap=document.createElement('div'); wrap.className='video-frame';
       var f=document.createElement('iframe');
       f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.video+'?rel=0';
