@@ -145,3 +145,4 @@ button.entry-label:active,button.entry-label:focus{background:transparent;outlin
 .lab-dream{padding:10px 18px;opacity:1;text-shadow:0 0 4px #3e305b,0 1px 3px #3e305bcc,0 0 10px #fff1d740}
 .lab-dream::before{content:"";position:absolute;inset:-6px -14px;background:radial-gradient(ellipse at center,#3e305bb0 0%,#5a458070 45%,transparent 75%);filter:blur(6px);z-index:-1;border-radius:50%}
 .lab-dream .ld-small{font-size:14.5px}.lab-dream .ld-name{font-size:19px}
+.lab-dream .ld-name{display:inline-flex;align-items:center;gap:7px}.lab-dream .ld-arrow{width:.7em;height:.7em;transform:translateY(-1px);flex:none;filter:drop-shadow(0 0 3px #3e305b)}
