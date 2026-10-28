@@ -17,7 +17,7 @@ document.querySelectorAll('.image-open').forEach(button => button.addEventListen
   document.querySelector('#viewer-link').href = button.dataset.link;
   viewer.showModal();
 }));
-document.querySelector('.close-viewer')?.addEventListener('click', () => viewer.close());
+viewer?.querySelector('.close-viewer')?.addEventListener('click', () => viewer.close());
 viewer?.addEventListener('click', event => { if (event.target === viewer) {const r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)viewer.close();}});
 
 const typeSelect = document.querySelector('#presentation-type');
@@ -84,7 +84,7 @@ document.querySelector('#load-x')?.addEventListener('click',()=>{
       clear(); img.hidden=true;
       var wrap=document.createElement('div'); wrap.className='video-frame';
       var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.video+'?autoplay=1&rel=0';
+      f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.video+'?rel=0';
       f.title=b.dataset.caption; f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
       f.referrerPolicy='strict-origin-when-cross-origin';
       wrap.appendChild(f); viewer.insertBefore(wrap, viewer.querySelector('.viewer-footer'));
