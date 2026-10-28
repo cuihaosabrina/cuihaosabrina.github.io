@@ -194,6 +194,9 @@
     if (w) swap(w, '欢迎来到', lang);
     if (n) swap(n, '崔浩的世界', lang);
     if (e) firstText(e, 'Enter Academia ', '进入学术世界 ', lang);
+    var ls = document.querySelector('.lab-dream .ld-small'), ln = document.querySelector('.lab-dream .ld-name');
+    if (ls) swap(ls, '✧ 一个正在实现的梦', lang);
+    if (ln) swap(ln, '人机群体实验室 ↗', lang);
     if (window.rmRerender) window.rmRerender();
     document.querySelectorAll('.lang-switch button').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
