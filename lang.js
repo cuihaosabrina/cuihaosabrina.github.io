@@ -45,8 +45,8 @@
 "How do social networks adapt and evolve?": "社交网络如何适应与演化？",
 "Donau Knowledge Forum, Montanuniversität Leoben": "多瑙知识论坛，莱奥本矿业大学",
 "First Place Winner in Microsoft Policy Hackathon": "微软政策黑客松第一名",
-"© Hao Cui <a href=\"#about\">Back to top ↑</a>": "© 崔浩 <a href=\"#about\">返回顶部 ↑</a>",
-"© Hao Cui": "© 崔浩",
+"© 2026 Hao Cui <a href=\"#about\">Back to top ↑</a>": "© 2026 崔浩 <a href=\"#about\">返回顶部 ↑</a>",
+"© 2026 Hao Cui": "© 2026 崔浩",
 "Google Scholar ↗": "谷歌学术 ↗",
 "Read more ↗": "阅读更多 ↗",
 "Search website": "搜索网站",
@@ -165,6 +165,7 @@
     });
     document.querySelectorAll(TEXT_SEL).forEach(function (el) {
       var key = originals.has(el) ? originals.get(el).trim() : el.innerHTML.trim();
+      key = key.replace(/^© \d{4} /, '© 2026 ');
       if (TEXT[key]) swap(el, TEXT[key], lang);
     });
     document.querySelectorAll('.profile-links a').forEach(function (a) {
@@ -220,5 +221,14 @@
     if (keep) saved = sessionStorage.getItem('lang-session-v1') || 'en';
     else sessionStorage.removeItem('lang-session-v1');
   } catch (err) {}
+  function fixYear() {
+    var y = String(new Date().getFullYear());
+    document.querySelectorAll('footer').forEach(function (f) {
+      for (var n = f.firstChild; n; n = n.nextSibling) if (n.nodeType === 3) n.nodeValue = n.nodeValue.replace(/© \d{4}/, '© ' + y);
+    });
+  }
+  var applyLang = apply;
+  apply = function (lang) { applyLang(lang); fixYear(); };
   if (saved === 'zh') apply('zh');
+  fixYear();
 })();
