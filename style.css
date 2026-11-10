@@ -92,3 +92,6 @@ aside h1{margin-left:-.03em}html[lang=zh-CN] aside h1{margin-left:-.08em}
 html[lang=zh-CN] #about .profile-quote p{font-family:"Noto Serif SC","Songti SC","STSong",serif;font-style:normal;font-weight:400;letter-spacing:.02em}html[lang=zh-CN] #about .profile-quote cite{font-style:normal}
 @media(max-width:780px){.lang-switch button,:root[data-theme=dark] .lang-switch button{padding:5px 10px}}
 :root[data-theme=dark] .lang-switch button[aria-pressed=true]{font-weight:600}
+
+/* Dream entrance hidden for now; delete this rule to bring the star back */
+html[data-theme] body header nav .dream-return,body header nav .dream-return{display:none!important}
