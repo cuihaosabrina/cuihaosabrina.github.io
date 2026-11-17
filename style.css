@@ -95,3 +95,8 @@ html[lang=zh-CN] #about .profile-quote p{font-family:"Noto Serif SC","Songti SC"
 
 /* Dream entrance hidden for now; delete this rule to bring the star back */
 html[data-theme] body header nav .dream-return,body header nav .dream-return{display:none!important}
+aside .email-note{margin:12px 0 0;padding:8px 11px;font-size:13px;line-height:1.5;color:#5d6f72;background:#f3f6f4;border-left:2px solid #a56c36;border-radius:0 4px 4px 0}
+aside .email-note a{color:#245c65;white-space:nowrap}
+html[data-theme="dark"] aside .email-note{background:#1b2b2e;color:#b7c9cb;border-left-color:#d8b47d}
+html[data-theme="dark"] aside .email-note a{color:#a8d8d6}
+aside .email-note{grid-column:1/-1}
