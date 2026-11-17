@@ -10,7 +10,6 @@
     ['aside .role', '研究员'],
     ['aside .role + p', '都柏林圣三一大学'],
     ['aside .degree', '网络科学博士<br>中欧大学'],
-    ['aside .email-note', '我的圣三一大学邮箱即将停用，请通过 <a href="mailto:cuihaosabrina@gmail.com">cuihaosabrina@gmail.com</a> 联系我。'],
     ['#about > h2', '关于我'],
     ['#about > p:nth-of-type(1)', '我是一名计算社会科学研究者，现任<a href="https://peoplefinder.tcd.ie/Profile?Username=CUIH1">都柏林圣三一大学</a>研究员，就职于<a href="https://www.tcd.ie/soham/">人与机器社会学研究中心（SOHAM）</a>。我研究社会系统中的集体动力学，尤其关注算法和人工智能如何塑造注意力、信念、知识和社会互动。'],
     ['#about > p:nth-of-type(2)', '我的研究始于对集体注意力和网络信息动态的关注。在中欧大学攻读<a href="https://networkdatascience.ceu.edu/">网络科学</a>博士期间，我研究了排序算法和平台干预如何塑造社交媒体上的公众注意力。在此基础上，我先后在都柏林大学和圣三一大学从事博士后研究，研究范围拓展到人机社会系统。我研究人工智能体如何影响集体信念，人们如何回应处于权威位置的人工智能，以及人工智能生成的知识与人类生产的知识有何不同。'],
